@@ -28,7 +28,7 @@ Update:
 
 ### 2. 替换 Disqus 载入的 js
 
-然后编辑 `disqus.swig` 文件，需要替换原本的 Disqus 的加载的内容，如果希望显示评论数量，就保留 `run_disqus_script('count.js')` 这一行，这个页面载入时还会加载 disqus 的资源：
+然后编辑 `disqus.swig` 文件，需要替换原本的 Disqus 的加载的内容，如果希望显示评论数量，就保留 `run_disqus_script('count.js')` 这一行，这样页面载入时还会加载 disqus 的资源：
 ```js
 run_disqus_script('count.js');
 {% if page.comments %}
@@ -54,7 +54,7 @@ var disqus = {
 }
 ```
 
-前面的 `function run_disqus_script(disqus_script){}` 这一段，不打算显示评论数量的话，可以一起删掉。
+前面的 `function run_disqus_script(disqus_script){}` 这一段，不打算显示评论数量的话，可以一起删掉，不显示评论数量的话，那么点击加载按钮之前，网页是不会加载来自 Disqus 的资源的。
 
 ### 3. 为按钮添加样式
 然后在 `custom.styl` 文件内给需要点击的按钮添加样式，第一步中加了 `class="btn"` 的话，就不用管这一段了 ：
@@ -73,13 +73,13 @@ var disqus = {
 ```
 
 ### 4. Problem
-1. 因为 Disqus 在点击按钮前不会加载，所以 Next 主题所带的显示评论数目地方的地方都只显示一个竖杠就结束了，感觉不太好，在 `custom.styl` 加入 css 屏蔽掉好了:
+1. 如果选择不显示评论数量的话，Next 主题所带的显示评论数目地方的地方都只显示一个竖杠就结束了，感觉不太好，在 `custom.styl` 加入 css 屏蔽掉好了:
   ```css
   .post-comments-count{
     display: none!important;
   }
   ```
-2. 网站有新评论的话，Disqus 默认是没有通知的，找了一下也只有邮件的通知，不过我这边感觉影响应该不大（  
+2. 网站有新评论的话，Disqus 默认是没有通知的，找了一下也只有邮件的通知，打开就好了。
 3. 感觉原本 Next 应该是优先载入评论的，文章都是页面刷出来后等一下才载入，于是那个点击加载的按钮在页面刷出来的时候就存在了，网页拉到底部刷新一下就能发现了，不过除非是太短的文章，也没有啥影响的样子。  
 
 

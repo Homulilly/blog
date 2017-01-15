@@ -16,15 +16,16 @@ date: 2016-06-04 16:14:00
 参考文章 ： [将Arch Linux系统迁移到SSD](http://www.longxk.com/posts/2014/03/10/migrate-arch-install-to-ssd/)
 <!--more-->
 对SSD磁盘进行分区：
-
-    #检查分区情况  
-    sudo fdisk -l  
-    #分区
-    sudo fdisk /dev/sdc #要迁移到的 SSD 磁盘为 sdc
-    #如果需要 swap ，在 fdisk 中用“t”命令将新添的分区id改为82（Linux swap类型）
-    #格式化
-    sudo mkfs -t ext4 -c /dev/sdxx
-    sudo mkswap /dev/sdxx
+```bash
+#检查分区情况  
+sudo fdisk -l  
+#分区
+sudo fdisk /dev/sdc #要迁移到的 SSD 磁盘为 sdc
+#如果需要 swap ，在 fdisk 中用“t”命令将新添的分区id改为82（Linux swap类型）
+#格式化
+sudo mkfs -t ext4 -c /dev/sdxx
+sudo mkswap /dev/sdxx
+```
 
 迁移文件（这个和参考的文章完全一样就可以了）：
 
@@ -44,33 +45,34 @@ sudo rsync -aAXHv ./ /mnt/newroot/  --exclude={dev/*,proc/*,sys/*,tmp/*,run/*,mn
 如果单独分出了 /boot、/home 或者其他文件对应操作一边即可。
 
 迁移完文件，需要生成新的 fstab 文件，所参考的文章使用了 genfstab 的命令，试了一下，Ubuntu 16.04 并不自带， apt-get 也没有，搜索一下可以下载编译安装，然而还需要安装依赖，比较麻烦，我直接对照着旧文件手动替换了一下。
-
-    #查看磁盘的uuid  
-    sudo blkid
-    sudo cp /mnt/newroot/etc/fstab /mnt/newroot/etc/fstab_bak
-    sudo vi /mnt/newroot/etc/fstab
-
+```bash
+#查看磁盘的uuid  
+sudo blkid
+sudo cp /mnt/newroot/etc/fstab /mnt/newroot/etc/fstab_bak
+sudo vi /mnt/newroot/etc/fstab
+```
 只需要迁移的分区 uuid 替换一下就可以了。
 
 然后在原文的安装 grub 时也遇到了问题
+```bash
+mount -o bind /dev /mnt/newroot/dev
+mount -t proc none /mnt/newroot/proc
+chroot /mnt/newroot /bin/bash
 
-    mount -o bind /dev /mnt/newroot/dev
-    mount -t proc none /mnt/newroot/proc
-    chroot /mnt/newroot /bin/bash
-
-    #直接执行命令结果报错  
-    root@ubuntu:/usr/lib# grub-install --target=x86_64-efi --recheck --debug /dev/sdc
-    Installing for x86_64-efi platform.
-    grub-install: info: cannot open `/boot/grub/device.map': No such file or directory.
-    grub-install: error: cannot find EFI directory.
-
+#直接执行命令结果报错  
+root@ubuntu:/usr/lib# grub-install --target=x86_64-efi --recheck --debug /dev/sdc
+Installing for x86_64-efi platform.
+grub-install: info: cannot open '/boot/grub/device.map': No such file or directory.
+grub-install: error: cannot find EFI directory.
+```
 查看 fstab 文件时看到旧文件 `/boot/efi was on /dev/sda2 during installation`
 
-搜索时发现可以直接安装 boot-repair 修复。
-
-    sudo add-apt-repository ppa:yannubuntu/boot-repair
-    sudo apt-get update
-    sudo apt-get install -y boot-repair
+搜索时发现可以直接安装 boot-repair 修复。  
+```
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo apt-get update
+sudo apt-get install -y boot-repair
+```
 
 查看一下符合预期
 

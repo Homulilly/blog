@@ -21,32 +21,36 @@ date: 2016-06-06 15:12:00
 <!--more-->
 ## 安装基础环境  
 ### 1. 安装 Nginx
+```
+sudo apt-get install nginx
+```
 
-    sudo apt-get install nginx
-
-配置文件在/etc/nginx下  
-程序文件在/usr/sbin/nginx下  
-日志文件在/var/log/nginx下  
-网站目录在 /var/wwwhtml/  
+配置文件在 `/etc/nginx` 下  
+程序文件在 `/usr/sbin/nginx` 下  
+日志文件在 `/var/log/nginx` 下  
+网站目录在 `/var/www/html/`  
 
 ### 2. 安装 PHP
-
-    sudo apt-get install php-cli php-cgi php-fpm php-mcrypt php-mysql php-gd php-common php-zip php-curl
+```
+sudo apt-get install php-cli php-cgi php-fpm php-mcrypt php-mysql php-gd php-common php-zip php-curl
+```
 
 php-fpm 是 Nginx 配合 PHP 使用的模块。  
 php-zip 、 php-curl 在安装 Flarum 时会用到。
 
-在 Nginx 的站点配置中 location ~* .php$ { } 字段中加入  
-
-    fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
-    include        fastcgi_params;
-    fastcgi_index  index.php;
+在 Nginx 的站点配置中 `location ~* .php$ { }` 字段中加入  
+```
+fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
+include        fastcgi_params;
+fastcgi_index  index.php;
+```
 
 `sudo service nginx reload`
 
 ### 3. 安装 MySQL
-
-    sudo apt-get install mysql-server mysql-client
+```
+sudo apt-get install mysql-server mysql-client
+```
 
 ### 4. 安装 phpMyAdmin
 
@@ -56,65 +60,66 @@ php-zip 、 php-curl 在安装 Flarum 时会用到。
 
 #### 首先安装 Composer ：   
 Link: [https://getcomposer.org/download/](https://getcomposer.org/download/)
-
-    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-    php -r "if (hash_file('SHA384', 'composer-setup.php') === '070854512ef404f16bac87071a6db9fd9721da1684cd4589b1196c3faf71b9a2682e2311b36a5079825e155ac7ce150d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-    php composer-setup.php
-    php -r "unlink('composer-setup.php');"
-
+```
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '070854512ef404f16bac87071a6db9fd9721da1684cd4589b1196c3faf71b9a2682e2311b36a5079825e155ac7ce150d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
 #### 安装 Flarum
-
-    composer create-project flarum/flarum . --stability=beta
+```
+composer create-project flarum/flarum . --stability=beta
+```
 
 Nginx 站点配置文件中加入下面内容
 ```
-    location / { try_files $uri $uri/ /index.php?$query_string; }
-    location /api { try_files $uri $uri/ /api.php?$query_string; }
-    location /admin { try_files $uri $uri/ /admin.php?$query_string; }
+location / { try_files $uri $uri/ /index.php?$query_string; }
+location /api { try_files $uri $uri/ /api.php?$query_string; }
+location /admin { try_files $uri $uri/ /admin.php?$query_string; }
 
-    location /flarum {
-        deny all;
-        return 404;
-    }
+location /flarum {
+    deny all;
+    return 404;
+}
 
-    location ~* \.php$ {
-        fastcgi_split_path_info ^(.+.php)(/.+)$;
-        #change php5-fpm.sock ->  php7.0-fpm.sock;
-        fastcgi_pass unix:/var/run/php7.0-fpm.sock;   
-        include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_index index.php;
-    }
+location ~* \.php$ {
+    fastcgi_split_path_info ^(.+.php)(/.+)$;
+    #change php5-fpm.sock ->  php7.0-fpm.sock;
+    fastcgi_pass unix:/var/run/php7.0-fpm.sock;   
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_index index.php;
+}
 
-    location ~* \.html$ {
-        expires -1;
-    }
+location ~* \.html$ {
+    expires -1;
+}
 
-    location ~* \.(css|js|gif|jpe?g|png)$ {
-        expires 1M;
-        add_header Pragma public;
-        add_header Cache-Control "public, must-revalidate, proxy-revalidate";
-    }
+location ~* \.(css|js|gif|jpe?g|png)$ {
+    expires 1M;
+    add_header Pragma public;
+    add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+}
 
-    gzip on;
-    gzip_http_version 1.1;
-    gzip_vary on;
-    gzip_comp_level 6;
-    gzip_proxied any;
-    gzip_types application/atom+xml
-               application/vnd.ms-fontobject
-               application/x-font-ttf
-               application/x-web-app-manifest+json
-               application/xhtml+xml
-               application/xml
-               font/opentype
-               image/svg+xml
-               image/x-icon
-               text/css
-               text/plain
-               text/xml;
-    gzip_buffers 16 8k;
-    gzip_disable "MSIE [1-6]\.(?!.*SV1)";
+gzip on;
+gzip_http_version 1.1;
+gzip_vary on;
+gzip_comp_level 6;
+gzip_proxied any;
+gzip_types application/atom+xml
+           application/vnd.ms-fontobject
+           application/x-font-ttf
+           application/x-web-app-manifest+json
+           application/xhtml+xml
+           application/xml
+           font/opentype
+           image/svg+xml
+           image/x-icon
+           text/css
+           text/plain
+           text/xml;
+gzip_buffers 16 8k;
+gzip_disable "MSIE [1-6]\.(?!.*SV1)";
 ```
 然后访问域名，进行安装。  
 <s>记得我安装时这一步不能正常进行，F12看了一下，各种资源404。通过编辑 config.php 文件，把url 后面 domian.com/index.php 的index.php 去掉后可以了</s>
@@ -139,10 +144,11 @@ Github 页面 ： [https://github.com/Flarum-Chinese/flarum-ext-simplified-chine
 
 按照链接中的指导开启 swap
 
-    /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
-    /sbin/mkswap /var/swap.1
-    /sbin/swapon /var/swap.1
-
+```
+/bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+/sbin/mkswap /var/myswap
+/sbin/swapon /var/myswap
+```
 
 再执行 `composer install`  就好了。
 

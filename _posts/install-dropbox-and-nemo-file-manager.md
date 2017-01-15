@@ -47,3 +47,6 @@ gsettings set org.gnome.desktop.background show-desktop-icons true
 xdg-mime default nautilus.desktop inode/directory application/x-gnome-saved-search
 ```
 然而 Nemo 的文件预览会有一个右和下的阴影，不是很喜欢（
+
+---
+Update: 结果试了仓库和好几个 ppa 的源，装了以后都有内存泄漏的问题，内存动不动就起飞，换回 Nautilus 了。
