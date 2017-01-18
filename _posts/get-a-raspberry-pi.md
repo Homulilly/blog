@@ -79,13 +79,16 @@ tar -zxvf node-v6.9.4-linux-armv7l.tar.gz
 ```
 然后把 nodejs 的 bin 目录加入 PATH 就可以用了。
 
+性能嘛。总之 `it works`。
 ```
+INFO  Files loaded in 5.81 s
 INFO  199 files generated in 28 s
 # vs
+INFO  Files loaded in 874 ms
 INFO  199 files generated in 3.31 s
 ```
 
-性能嘛。总之 `it works`。 <s>性能还是 Intel 的 NUC 好。</s> 哦对，还有那啥买的那个小风扇，没想到挺呼啸的，用了一下后我就拆了下来，毕竟现在也才是冬天。
+ <s>要说性能还是 Intel 的 NUC 好。</s> 哦对，还有那啥买的那个小风扇，没想到挺呼啸的，用了一下后我就拆了下来，毕竟现在也才是冬天。
 
 
 参考：
