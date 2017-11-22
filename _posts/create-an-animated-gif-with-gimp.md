@@ -11,12 +11,12 @@ tags:
 
 然后今天发现其实很简单，只要在每一个图层名称的后面加上两个括号，然后分别填入时间与当前帧的过度方法，如 (40ms)(combine) 或 (40ms)(replace) ，40ms 表示当前帧的延时为 40ms (即每秒25帧)，combine 表示当前帧与前一帧相互叠加，即之前的帧会为当前帧的透明部分提供背景， replace 表示当前帧会替换前一帧，之前的帧无法再为当前帧提供背景。  
 <!--more-->
-![Layers](/images/post/p04-layers.png)
+![Layers](https://m.nep.me/blog/post/p04-layers.png)
 
 再制作 GIF 动画文件时，图层的可见性对最后的文件没有影响，不可见图层并不会在导出时被忽略。  
 保存时选择 `导出为...` 手动选择 GIF动画 或者将文件名后缀修改为 GIF ，然后在弹出的选项框中，首先要选中 `作为动画` 才会生成动图，可以指定一个默认的间隔处理没有指定时间的帧图层。    
-![Export](/images/post/p04-export-as-gif.png)
+![Export](https://m.nep.me/blog/post/p04-export-as-gif.png)
 
 最后保存就可以了。
 
-![Shinobu](/images/post/p04-shinobu-640x360.gif)
+![Shinobu](https://m.nep.me/blog/post/p04-shinobu-640x360.gif)

@@ -13,7 +13,7 @@ categories:
 
 不愧是老猎人地图，进去之后又回到了新出生在亚楠时候的感觉，一堆坑爹的跳骚，各种猎人教做人，终于碰见第一个 BOSS 路德维希，心里就是干，怒去金杯刷经验，刷好力技双 50 ，拿起伊夫琳，干掉。想说失败者弱爆，不过看攻略前还是被坑死好几次，磕了兽丸，一个点砍死。然后就见到了玛利亚女士，感觉美爆帅呆，死了那么多次就冲见到了玛利亚女士就值得了。唉对，还有人偶妹子。反正这篇就是想贴贴玛利亚女士和人偶的截图。  
 
-<img src="/images/post/p07-bloodborne-lady-maria.jpg" class="full-image" />
+<img src="https://m.nep.me/blog/post/p07-bloodborne-lady-maria.jpg" class="full-image" />
 <!--more-->
 打完玛利亚，看见别人说 DLC 最难的劳伦斯有些心虚，于是去刷金杯女王，半路被玷污看门狗无限教做人，最后看了攻略才搞定。然后一路见到女王，初见感觉这女王好简单啊，被教做人几次后感觉不对，不过确实是不难，慢慢来就可以了。然后去见一周目的劳伦斯，果然是一周目，难得第一个初见过的 BOSS ，然后为了拿玛利亚的洛阳，惨死鱼人锤下不知多少次，最后又被孤儿无限教做人，打了好几个小时，才运气好过掉，血瓶都不知道磕了多少，二阶段满天飞的 BOSS 什么鬼啊啊啊啊。  
 
@@ -21,10 +21,10 @@ categories:
 
 <s> 然后不知道为什金杯刷的停不下来了，以及随后去看了黑桐谷歌的攻略视频后，果然不是一个游戏系列</s>  
 <blockquote class="blockquote-center"> 猎人永不孤单 </blockquote>
-![Lady Maria](/images/post/p07-bloodborne-doll-01.jpg)  
-![Lady Maria](/images/post/p07-bloodborne-doll-02.jpg)  
-![Lady Maria](/images/post/p07-bloodborne-doll-03.jpg)  
-![Lady Maria](/images/post/p07-bloodborne-doll-04.jpg)  
+![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-01.jpg)  
+![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-02.jpg)  
+![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-03.jpg)  
+![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-04.jpg)  
 <blockquote class="blockquote-center"> 以血祝福我们 </blockquote>  
 
 ---

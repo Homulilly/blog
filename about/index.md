@@ -19,8 +19,7 @@ date: 2016-08-17 17:00:55
 
 **Contact Information:**  
 &emsp; Google+ : +Aroes_Litvyak  
-&emsp; PlayStation HK : @Aroes_Litvyak  
 &emsp; Telegram : @Homura  
 
-最后，Let's \萌脇舞以/ (๑>؂<๑)  
-&emsp; ![門脇舞以 x 大橋歩夕](/images/page/maita_ayuru.jpg)
+最后，Let's \萌脇舞以/ & \钻石小姐姐/ (๑>؂<๑)    
+&emsp; ![Hey! My Diamond!~ ](https://m.nep.me/blog/page/diamond.jpg)

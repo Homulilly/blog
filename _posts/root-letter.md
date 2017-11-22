@@ -24,4 +24,4 @@ categories:
 
 总之，不要钱的白金杯为什么不要呢。以及最后也发现了，这似乎好像是一个宣传性质的游戏，估计这个就和我没有什么关系了。
 
-![Root Letter](/images/post/p08-root-letter.jpg)
+![Root Letter](https://m.nep.me/blog/post/p08-root-letter.jpg)

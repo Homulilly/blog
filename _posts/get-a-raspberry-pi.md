@@ -23,9 +23,9 @@ sudo dd bs=4M if=2017-01-11-raspbian-jessie.img of=/dev/sde
 ```
 dd 完后直接插到树莓派中，插电启动就可以了。因为忘记买卡，U盘也突然失踪了，只好暂时先用一张 8G 的 C4 卡顶着，感觉居然能用，启动也大概就在 20s 左右。不过写入只有 2MB/s ，该换还是得换ww  
 
-系统默认用户名是 `pi` ， 密码是 `raspberry` ，我是搜了一下才知道，他们说第一次开机会运行设置向导，然而我并没见到，直接让我登录了呃。 `sudo raspi-config` 可以运行设置向导，里面可以设置扩展 root 分区到整个 SD 卡、启动选项、时区键盘等很多我们需要设置的东西。  
+系统默认用户名是 `pi` ， 密码是 `raspberry` ，我是搜了一下才知道，他们说第一次开机会运行设置向导，然而我并没见到，直接让我登录了呃。 `sudo raspi-config` 可以运行设置向导，里面可以设置扩展 root 分区到整个 SD 卡、启动选项、时区键盘等很多需要设置的东西。  
 
-<s>有 HDMI 的设备都是好设备，</s> 可以直接插网线进行连接，不过我没多余的网线了，只能先配置一下 WIFI 来用，可以通过 `sudo iwlist scan` 来扫描 WIFI 列表，然而那屏幕显示... `>_>` ，反正我自己的 WIFI 肯定信息都知道：
+启动可以直接插网线进行 SSH 连接，不过我没多余的网线了，只能先接 HDMI (<s>有 HDMI 的设备都是好设备</s> ) 配置一下 WIFI 来用，可以通过 `sudo iwlist scan` 来扫描 WIFI 列表，然而那屏幕显示... `>_>` ，反正自己的 WIFI 肯定信息都知道：
 ```
 # 编辑 WIFI 文件
 sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
@@ -38,7 +38,7 @@ network={
 # 查看信息
 ifconfig wlan0
 
-# 如果等一段时间还没生效
+# 如果没生效
 sudo ifdown wlan0 && sudo ifup wlan0
 ```
 
@@ -49,7 +49,7 @@ sudo apt install zsh git git-core tmux curl tsocks htop aria2
 sudo apt python3 python3-pip python-pip
 sudo apt transmission-common transmission-cli transmission-daemon
 ```
-除了性能着急，第一次见到百分比是一个数字一个数字的走的 （  
+除了性能着急，第一次见到百分比是一个数字一个数字的走的，感觉还可以 （  
 
 之后买的 tf 卡到了，因为新买的容量大于 8G ，直接 dd 就可以，我只有一个读卡器，只好中转一下。
 ```
@@ -88,8 +88,70 @@ INFO  Files loaded in 874 ms
 INFO  199 files generated in 3.31 s
 ```
 
- <s>要说性能还是 Intel 的 NUC 好。</s> 哦对，还有那啥买的那个小风扇，没想到挺呼啸的，用了一下后我就拆了下来，毕竟现在也才是冬天。
+ <s>要说性能还是 Intel 的 NUC 好，不过价格...</s> 哦对，还有那啥买的那个小风扇，没想到挺呼啸的，试了一会儿后我就拆了下来，毕竟现在也还是冬天。
 
+Update：  
+买来第一件事还是装了 Transmission `>_>`:  
+### 1. 更换软件源为阿里的  
+备份编辑 `/etc/apt/sources.list`
+```
+cd /etc/apt
+sudo cp sources.list sources.list_bak
+sudo vim sources.list
+```
+
+注释掉自带的，加入阿里的源：
+```
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main contrib non-free rpi
+```
+### 2. Transmission
+安装与修改配置文件
+```
+sudo apt install transmission-daemon transmission-cli transmission-remote
+# 编辑配置文件
+sudo systemctl stop transmission-daemon
+sudo vim /etc/transmission-daemon/settings.json
+```
+修改的内容：  
+```
+"download-dir":
+"incomplete-dir":
+"rpc-bind-address":
+"rpc-username":
+"rpc-password":
+"rpc-whitelist": "127.0.0.1,192.168.*.*"
+```
+`rpc-password` 直接填入密码，启动后自动就加密了。  
+
+默认 Transmission 是以 `debian-transmission` 用户运行的，需要处理一下下载文件夹的权限的问题：
+```
+sudo usermod -a -G debian-transmission $user
+sudo chown debian-transmission:debian-transmission $download-dir
+sudo chmod 770 $download-dir
+```
+编辑配置文件修改 `umask` 的值 18 为 2 。
+
+### 3. Samba
+```
+sudo apt install samba
+# 为用户生成密码
+sudo smbpasswd -a $user
+
+# 编辑配置文件
+cd /etc/samba
+sudo cp smb.conf smb.conf_bak
+sudo vim smb.conf
+
+sudo service smbd restart
+```
+
+编辑配置文件 `/etc/samba/smb.conf` 加入共享文件夹的配置：
+```
+[RaspberryPI-Share]
+path = /mnt/Files
+valid user = $user
+read only = no
+```
 
 参考：
  - [树莓派3命令行配置wifi无线连接和蓝牙连接](https://www.embbnux.com/2016/04/10/raspberry_pi_3_wifi_and_bluetooth_setting_on_console/)
@@ -98,3 +160,5 @@ INFO  199 files generated in 3.31 s
  - [使用 vcgencmd 指令查看 Raspberry Pi 的信息](https://blog.gtwang.org/iot/raspberry-pi-vcgencmd-hardware-information/)
  - [树莓派3的使用(Raspbian)](https://www.zybuluo.com/yangxuan/note/321467)
  - [树莓派上的Node.js](https://cnodejs.org/topic/54032efa9769c2e93797cd06)
+ - [TransmissionHowTo](https://help.ubuntu.com/community/TransmissionHowTo)
+ - [How to Create a Network Share Via Samba Via CLI](https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20)

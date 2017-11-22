@@ -17,7 +17,7 @@ date: 2016-04-01 22:32:00
 <!--more-->
 整体剩余的文件空间现在是80.5 GB剩余， 我也不记得原本有多少空间，大概是在10-20GB之间，还好主要都是一些动漫。
 
-![Preview](/images/post/p02-preview.png)
+![Preview](https://m.nep.me/blog/post/p02-preview.png)
 
 于是，只能准备数据恢复了，在网上搜索了一下，有safebox， `sudo apt-get install safebox` ，呃，看了一下但是并不会用。
 
@@ -67,7 +67,7 @@ sudo /opt/extundelete/bin/extundelete /dev/sdb1 --restore-all -o /[path to put f
 
 终于开始恢复了，等了时间比较久，看最后一句话似乎并没有全部的恢复出来，打开恢复的文件夹一看，总共32.1GB，大概只有一半左右，也有部分文件是残缺的，没有完全恢复。恢复之前一不小心用了Chrome下载了一个文件，虽然不大，估计对数据恢复的影响应该不小。文件恢复的效果不是很好，有的图片虽然恢复出来的了，但是文件夹串了。所以恢复出来的数据，我也就取了里面的一个很完整的音乐文件夹，其余的意义不是很大了。
 
-![2016-04-01 20-27-47.png](/images/post/p02-result.png)
+![2016-04-01 20-27-47.png](https://m.nep.me/blog/post/p02-result.png)
 
 还觉得比较怨念的是，这几天收的图都没有了，不过自己去翻Chrome下载列表的时候发现居然已经好几天没有清除下载列表了，于是手动了一大批的中键，差不多不用重复劳动了。
 

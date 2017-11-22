@@ -76,12 +76,12 @@ sudo apt-get install -y boot-repair
 
 查看一下符合预期
 
-![预览](/images/post/p03-preview.png)
+![预览](https://m.nep.me/blog/p03-preview.png)
 
 不过执行前最好提前打开一个终端窗口，因为执行的过程中可能需要执行一些命令。  
 然而我打开新的终端窗口时出现了错误,然后发现之前有一个没有关闭的终端窗口。
 
-![错误](/images/post/p03-error.png)
+![错误](https://m.nep.me/blog/p03-error.png)
 
 最后执行结束的时候，结束窗口仍然说出现了错误：
 

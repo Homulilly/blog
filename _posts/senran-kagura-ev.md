@@ -17,7 +17,7 @@ categories:
 
 游戏没什么难度，花了几天时间就通关了。
 
-<img src="/images/post/p06-senran-kagura-ev-01.jpg" class="full-image" />
+<img src="https://m.nep.me/blog/post/p06-senran-kagura-ev-01.jpg" class="full-image" />
 <!--more-->
 游戏的手感上，感觉不是很好，反正我的感觉就是硬直的不能自理，各种操作就是硬直叠硬直，玩 SV 时没有这样的感觉，而且搜了一下，现在的版本已经比初始的版本好多了。比如选个角色被一堆小怪围住后，正常的连招根本打不出来，不过想了想这游戏卖点不是这个，于是换种打法，变（tuo）身（yi）后一股脑大招带走就好了。  
 剧情么，玩的很开心就好了，要什么剧情，有奶子，有爆衣就够啦，虽然全是圣光。  
@@ -32,13 +32,13 @@ categories:
 最后，感觉什么也没写，我就是想说夜樱是好老婆啊，那里能娶的到！！！！    
 
 感觉玩这个游戏最正确的决定就是给夜樱带上了兔耳朵ww   
-![Yozakura](/images/post/p06-senran-kagura-ev-yozakura-01.jpg)
+![Yozakura](https://m.nep.me/blog/post/p06-senran-kagura-ev-yozakura-01.jpg)
 
 黑色版：  
-![Yozakura](/images/post/p06-senran-kagura-ev-yozakura-02.jpg)
+![Yozakura](https://m.nep.me/blog/post/p06-senran-kagura-ev-yozakura-02.jpg)
 
-[Special Link 01](https://twitter.com/EilaSanya_501/status/794099804125032448)  
-[Special Link 02](https://twitter.com/EilaSanya_501/status/794099483617464320)  
+[Special Link 01](https://twitter.com/Aroes_Litvyak/status/794099804125032448)  
+[Special Link 02](https://twitter.com/Aroes_Litvyak/status/794099804125032448)  
 
 ---
 无关：尝试了一下这个突破边界的图片展示方式，感觉这个 Mist 这个主题模式下效果没有那种两栏的效果好。
