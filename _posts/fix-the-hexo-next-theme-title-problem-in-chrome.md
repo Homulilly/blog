@@ -8,7 +8,7 @@ tags:
 
 效果是下面这样的， <s>触发原因不明，看了下有三个出现这种情况的单词，都是英文 + 1个数字 + 中文，但是明明有比这三个长很多的都可以正常显示，所以也不确定。</s>  
 
-![next_theme_title.png](/images/post/p05-next-theme-title.png)
+![next_theme_title.png](https://m.nep.me/blog/post/p05-next-theme-title.png)
 
 试了一下，发现是因为字体的原因，我在主题配置文件中将全局字体 `Lato` 修改为了 `Ubuntu`，试了试，确实是这个原因。
 
