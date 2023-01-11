@@ -82,6 +82,36 @@ var disqus = {
 2. 网站有新评论的话，Disqus 默认是没有通知的，找了一下也只有邮件的通知，打开就好了。
 3. 感觉原本 Next 应该是优先载入评论的，文章都是页面刷出来后等一下才载入，于是那个点击加载的按钮在页面刷出来的时候就存在了，网页拉到底部刷新一下就能发现了，不过除非是太短的文章，也没有啥影响的样子。  
 
+### 5. Update  
+更新 Next 到最新的 v5.1.3 后，按钮的样式不太正常。看着是只有鼠标悬浮的样式，不想费劲找那里出了问题。简单粗暴的处理了一下。  
+
+
+将第一步中的 `<button class="btn"` 修改为 `<button class="disbtn"`  
+然后直接将对应的 css 样式粘帖到 `custom.styl` 中就可以了。  
+
+```
+.disbtn {
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #fff;
+    background: #222;
+    border: 2px solid #222;
+    text-decoration: none;
+    border-radius: 0;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    line-height: 2;
+}
+
+.disbtn:hover {
+  border-color: #222;
+  color: #222;
+  background: #fff;
+}
+```
 
 参考链接：
 - [Disqus点击加载](https://gist.github.com/JimmehCai/84dead2d2919af05fede)
