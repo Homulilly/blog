@@ -2,7 +2,7 @@
 title: 忽略 VSCODE 中文非 ASCII 字符警告
 date: 2023-01-13 13:03:11
 tags:
- - vscode
+ - VScode
 categories:
  - Note
 ---

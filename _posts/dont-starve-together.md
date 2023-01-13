@@ -2,8 +2,8 @@
 title: Don't Starve Together
 date: 2018-02-16 16:00:00
 tags:
- - Game
- -  Don't Starve Together
+ - Games
+ - Dont Starve Together
 categories:
  - Note
 ---
@@ -15,10 +15,10 @@ categories:
 <!--more-->
 ### 辅助 MOD ：
 
-*   中文汉化  
-    [Chinese Language Pack](https://steamcommunity.com/sharedfiles/filedetails/?id=367546858()  
-    [Chinese Plus](https://steamcommunity.com/sharedfiles/filedetails/?id=572538624)  
-    [Chinese Font](https://steamcommunity.com/sharedfiles/filedetails/?id=678340265)
+*   中文汉化，有官中了  
+    ~~[Chinese Language Pack](https://steamcommunity.com/sharedfiles/filedetails/?id=367546858)~~    
+    ~~[Chinese Plus](https://steamcommunity.com/sharedfiles/filedetails/?id=572538624)~~  
+    ~~[Chinese Font](https://steamcommunity.com/sharedfiles/filedetails/?id=678340265)~~
     
 *   客户端 MOD  
     [Geometric Placement](https://steamcommunity.com/sharedfiles/filedetails/?id=351325790) : 放置东西时显示方格，强迫症福音  

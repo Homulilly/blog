@@ -2,8 +2,8 @@
 title: 解决华硕 DUO PRO 在 Windows 11 下自动更换壁纸的 BUG 
 date: 2023-01-13 12:59:43
 tags:
- - windows 
- - asus
+ - Windows 
+ - ASUS
 categories:
  - Note
 ---

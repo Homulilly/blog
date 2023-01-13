@@ -4,6 +4,8 @@ date: 2019-12-10 06:31:04
 tags: 
  - Games
  - Another EDEN
+categories:
+ - Games
 ---
 
 ![Jocker](https://m.nep.me/blog/post/joker.png)
