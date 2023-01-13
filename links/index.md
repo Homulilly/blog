@@ -6,11 +6,11 @@ comments: false
 ~~小~~ 大伙伴们：
 
 - [西园](http://xiyuan.lu/)
-- [凤凰卷](https://blog.kiseki.moe/)
-- [CEE](https://blog.phoenixlzx.com/)
+- [凤凰卷](https://blog.ph:oenixlzx.com/)
+- [CEE](https://blog.cee.moe/)
 - [HY](https://blog.kiseki.moe/)
 - [小成博客](https://atk.me/)
-- [Anjoy](https://atxiu.cn/)  
+- [Anjoy](https://atxiu.github.io/about/)  
 
 一些链接：
 
