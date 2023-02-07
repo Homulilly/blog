@@ -109,7 +109,8 @@ docker ps -as
 ##
 ```
 # 1. 重新获取镜像
-docker pull bitwardenrs/server:latest
+#docker pull bitwardenrs/server:latest
+docker pull vaultwarden/server:1.27.0
 
 # 2. 停止、删除原容器
 docker stop bitwarden
@@ -123,5 +124,27 @@ docker image ls
 # 5. 删除原镜像文件, $ID 在 step4 中可以看到
 docker image rm $ID
 ```
+
+设置 docker 容器开机自启：
+ 
+```
+# 设置 docker 开机启动
+systemctl enable docker 
+
+# 设置容器自动重启
+docker run -d --restart=always --name 容器名称 镜像
+```
+  - no //默认，容器退出后不重启
+  - on-failure //非正常退出后重启
+  - on-failure:3 // 非正常退出时重启，最多三次
+  - always //无论退出状态如何，都会重启
+  - unless-stopped //在容器退出时总是重启容器，但是不考虑在 Docker 守护进程启动时就已经停止了的容器 
+
+更新已有容器：  
+
+```
+docker update --restart=always 容器 ID / 容器名称
+```
+
 
 参考: [搭建自己的密码管理服务器 Bitwarden](https://cloud.tencent.com/developer/article/1578102)
