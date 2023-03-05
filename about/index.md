@@ -21,3 +21,5 @@ date: 2016-08-17 17:00:55
 
 最后，Let's \萌脇舞以/ & \钻石小姐姐/ (๑>؂<๑)    
 &emsp; ![Hey! My Diamond!~ ](https://m.nep.me/blog/page/diamond.jpg)
+
+<center>PIC Pixiv: [輝く宝石](https://www.pixiv.net/artworks/65542362)</center>
