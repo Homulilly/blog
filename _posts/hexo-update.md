@@ -122,8 +122,14 @@ search:
   local_search:
   enable: true
 ```
+- **暗黑模式鼠标选中背景分不清**  
+修改 `next/source/css/_variables/base.styl` , `$selection-bg = $blue-deep;`，可以直接填颜色代码 
+```
+$selection-bg = #424242;
+```
+
 - **Disqus load after click**
-不会改了，直接换 Twikoo   
+不会改了，正好也发现了 Twikoo ，换上。  
 
 ## 4. 设置 Twikoo
 
