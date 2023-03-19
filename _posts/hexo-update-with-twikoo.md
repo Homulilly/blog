@@ -337,6 +337,7 @@ type: links
   info: Aroes's Blog | \萌脇舞以/
   site: https://homulilly.com/
   avatar: https://homulilly.com/images/avatar.jpg
+  rss: https://homulilly.com/atom.xml
 ```
 ````
 
@@ -358,3 +359,31 @@ hexo g && hexo s
 hexo d
 ```
 Ref: [Hexo + NexT8 添加友链](https://xiaoniuhululu.com/2022-05-09_Hexo+Next8_add_friends_page/)
+
+## 7. 隐藏 Mist 边栏 Link 的点与下划线
+```css
+/* 侧栏 Social Link */
+.links-of-author a::before{
+    display: none;
+}
+
+.links-of-author a{
+    border-bottom: none;
+}
+```
+
+## 8. 设置 Feed
+
+```
+npm install hexo-generator-feed
+```
+在 Hexo 主配置文件中加入 
+```
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+```
