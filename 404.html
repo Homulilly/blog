@@ -1,81 +1,27 @@
 ---
 layout: false
-title: "Error 404: Page Not Found"
+title: 404 NOT FOUND
 comment: false
 ---
 <html lang="cn">
 <head>
-		<meta charset="UTF-8">
-		<title>Error 404: Page Not Found</title>
-		<style>
-		* {
-			margin: 0;
-			line-height: 1.5;
-		}
-
-		html {
-			color: #888;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			text-align: center;
-		}
-
-		h1 {
-			color: #555;
-			font-size: 2em;
-			font-weight: 400;
-		}
-
-		p {
-			line-height: 1.2;
-		}
-
-		@media screen and (max-width: 270px) {
-			body {
-				margin: 10px auto;
-				position: static;
-				width: 95%;
-			}
-
-			h1 {
-				font-size: 1.5em;
-			}
-		}
-		</style>
+	<meta charset="UTF-8">
+	<title>404 NOT FOUND</title>
+    <style>
+    h1 {
+        color: #555;
+        font-size: 2em;
+        font-weight: 400;
+    }
+    </style>
 </head>
+
 <body>
-        <div style="text-align: center;">
-        <a href="/">
-        <img alt="404 Not Found" title="404 Not Found Click image back to Home" src="https://m.nep.me/pic/error/404.jpg" style="margin: auto;">
-        </a>
-        <br />
-        <h1>Error 404: おっぱい Not Found</h1>
-        <p>将在<span id="totalSecond">5</span>秒后回到首页</p> <br />
-    </body>
-<script language="javascript" type="text/javascript">
-    var second = document.getElementById('totalSecond').textContent;
-    if (navigator.appName.indexOf("Explorer") > -1)  //判断是IE浏览器还是Firefox浏览器，采用相应措施取得秒数
-    {
-        second = document.getElementById('totalSecond').innerText;
-    } else
-    {
-        second = document.getElementById('totalSecond').textContent;
-    }
-    setInterval("redirect()", 1000);  //每1秒钟调用redirect()方法一次
-    function redirect()
-    {
-        if (second < 0)
-        {
-            location.href = '/';
-        } else
-        {
-            if (navigator.appName.indexOf("Explorer") > -1)
-            {
-                document.getElementById('totalSecond').innerText = second--;
-            } else
-            {
-                document.getElementById('totalSecond').textContent = second--;
-            }
-        }
-    }
-</script>
+	<div style="text-align: center;">
+		<a href="/">
+		<img alt="404 NOT FOUND" title="404 NOT FOUND, Click image back to Home" src="https://m.nep.me/pic/error/404.jpg" style="margin: auto;">
+		</a>
+		<h1>404 NOT FOUND!</h1>
+	</div>
+</body>
 </html>

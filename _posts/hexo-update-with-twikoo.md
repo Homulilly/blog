@@ -181,7 +181,7 @@ Ref: [Twikoo小白私有化部署教程,迁移腾讯云](https://xiaoniuhululu.c
 npm install hexo-next-twikoo@1.0.3
 ```
 
-编辑配置文件，添加下面内容
+编辑配置主题文件，添加下面内容
 ```yml
 twikoo:
   enable: true
@@ -202,3 +202,159 @@ npm install hexo-deployer-git
 
 hexo d
 ```
+
+## 6. 设置 Links 页面样式
+
+### 添加自定义样式  
+先修改主题配置文件，添加自定义样式文件，放在 Hexo 文件夹内，而不是主题的文件夹内
+```yml
+custom_file_path:
+  style: source/_data/styles.styl
+```
+
+编辑或是创建对应的 `styles.styl`，加入下面的样式
+```css
+#links {
+    margin-top: 5rem;
+}
+
+.links-content {
+    margin-top: 1rem;
+}
+
+.link-navigation::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.card {
+    width: 300px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition-duration: 0.15s;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.card:nth-child(odd) {
+    float: left;
+}
+
+.card:nth-child(even) {
+    float: right;
+}
+
+/* 鼠标悬浮时效果
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+} */
+
+.card a {
+    border: none;
+}
+
+.card .ava {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin: 0 !important;
+    margin-right: 1em !important;
+    border-radius: 4px;
+    margin-top: 5px !important;
+}
+
+.card .card-header {
+    font-style: italic;
+    overflow: hidden;
+    width: 236px;
+}
+
+.card .card-header a {
+    font-style: normal;
+    color: #2bbc8a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card .card-header a:hover {
+    color: #d480aa;
+    text-decoration: none;
+}
+
+.card .card-header .info {
+    font-style: normal;
+    color: #a3a3a3;
+    font-size: 14px;
+    min-width: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+```
+
+### 创建 Links 页面
+
+编辑主题配置文件，设置链接
+```yml
+menu:
+  #...
+  links: /links || fas fa-link
+```
+
+创建页面
+
+```sh
+hexo new page links
+```
+
+内容如下
+````html
+---
+title: Links
+type: links
+---
+
+<div class="links-content">
+    <div class="link-navigation">
+        {% for link in site.data.links %}
+        <div class="card"><img class="ava nomediumzoom" src="{{ link.avatar }}" />
+            <div class="card-header">
+                <div><a href="{{ link.site }}" target="_blank"> {{ link.name }}</a> </div>
+                <div class="info">{{ link.info }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+------
+
+> 友接格式  
+```md
+- name: Homulilly
+  info: Aroes's Blog | \萌脇舞以/
+  site: https://homulilly.com/
+  avatar: https://homulilly.com/images/avatar.jpg
+```
+````
+
+`site.data` 就是 `source/_data` 目录，后面的 `links` 就是等会要创建的 `links.yml` 友链文件。
+
+如果向再添加一组不同的链接，可以再建一个 `linkb.yml` => `{% for link in site.data.linkb %}`。
+
+### 添加友链 
+
+在 `source/_data/` 目录下新建 `links.yml` 文件，按照格式填入链接。
+
+### 部署到 Hexo
+
+`links.yml` 有改动时 `hexo g` 时不会更新 links 页面，先 `clean` 一下就可以了。
+```sh
+hexo clean 
+hexo g && hexo s
+
+hexo d
+```
+Ref: [Hexo + NexT8 添加友链](https://xiaoniuhululu.com/2022-05-09_Hexo+Next8_add_friends_page/)
