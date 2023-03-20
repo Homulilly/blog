@@ -20,6 +20,12 @@ hexo: 5.4.2
 更新一下 
 <!--more--> 
 
+{% note success %}
+样式修改可以放在自定义样式文件中，尽量避免修改主题的源文件
+跳转到 [添加自定义样式](#添加自定义样式文件)
+这样更新主题时只需要备份主题的 _config.yaml 即可
+{% endnote %}
+
 ## 1. 设置环境
 
 ```sh
@@ -41,7 +47,7 @@ git clone https://github.com/Homulilly/blog.git source
 
 ## 2. 编辑配置
 修改配置 `_config.yml` 和 `theme/next/_config.yml`   
-- 语言由 `zh-hans` 替换为 `zh-CN`
+- 语言由 `zh-hans` 修改为 `zh-CN`
 
 ## 3. 问题处理
 预览
@@ -69,10 +75,9 @@ motion:
 - **图片** 
   - **启用点击**  
   配置文件启用 `fancybox` 
-  - ~~图片居中~~
   - ~~给图片加个边框~~    
   - **移除 Fancybox 的 Image Caption** 
-  将下面的内容加到文件 `next/source/css/_schemes/Mist/_posts-expand.styl`中，加到 `.post-tags` 与 `.post-nav` 中间
+  在`自定义样式`文件中添加
   ```css
   /*一通操作猛如虎，打开暗黑模式丑上天  
   .post-body img {
@@ -84,16 +89,17 @@ motion:
     display: none;
   }
   ```
-- 顶部导航的 MENU 改为靠右  
-编辑文件 `themes/next/source/css/_schemes/Mist/_menu.styl`  
+  或是修改 `next/source/css/_schemes/Mist/_posts-expand.styl`
+
+- 顶部导航的 MENU 改为靠右对齐  
+在`自定义样式`文件中添加  
 ```css
 .menu {
-  margin: 0;
-  // 添加
   text-align: right;
 ...
 }
 ```
+~~或是编辑文件 `themes/next/source/css/_schemes/Mist/_menu.styl`~~
 
 - **文章多了 `更新于...`**  
 编辑 `theme/next/_config.yml`
@@ -122,10 +128,12 @@ search:
   local_search:
   enable: true
 ```
-- **暗黑模式鼠标选中背景分不清**  
-修改 `next/source/css/_variables/base.styl` , `$selection-bg = $blue-deep;`，可以直接填颜色代码 
-```
-$selection-bg = #424242;
+- **暗黑模式选中背景不清晰**  
+在`自定义样式`文件中添加   
+```css
+::selection {
+    background-color: #424242;
+}
 ```
 
 - **Disqus load after click**
@@ -205,15 +213,17 @@ hexo d
 
 ## 6. 设置 Links 页面样式
 
-### 添加自定义样式  
-先修改主题配置文件，添加自定义样式文件，放在 Hexo 文件夹内，而不是主题的文件夹内
+### 添加自定义样式文件  
+先修改主题配置文件，开启自定义样式文件，将文件放在 Hexo 文件夹内，而不是主题的文件夹  
+编辑 `themes/next/_config.yaml`  
 ```yml
 custom_file_path:
   style: source/_data/styles.styl
 ```
 
-编辑或是创建对应的 `styles.styl`，加入下面的样式
+编辑或是创建 `styles.styl`，加入下面的样式
 ```css
+Links 页面样式
 #links {
     margin-top: 5rem;
 }
@@ -341,9 +351,9 @@ type: links
 ```
 ````
 
-`site.data` 就是 `source/_data` 目录，后面的 `links` 就是等会要创建的 `links.yml` 友链文件。
+`site.data` 就是 `source/_data` 目录，后面的 `links` 就是后面创建的 `links.yml` 友链文件。
 
-如果向再添加一组不同的链接，可以再建一个 `linkb.yml` => `{% for link in site.data.linkb %}`。
+如果想再添加一组不同的链接，可以再建一个 `linkb.yml` => `{% for link in site.data.linkb %}`。
 
 ### 添加友链 
 
@@ -351,16 +361,17 @@ type: links
 
 ### 部署到 Hexo
 
-`links.yml` 有改动时 `hexo g` 时不会更新 links 页面，先 `clean` 一下就可以了。
+`links.yml` 有改动时 `hexo g` 不会更新 links 页面，先 `hexo clean` 一下就可以了。
 ```sh
 hexo clean 
 hexo g && hexo s
 
 hexo d
 ```
-Ref: [Hexo + NexT8 添加友链](https://xiaoniuhululu.com/2022-05-09_Hexo+Next8_add_friends_page/)
+Ref: [Hexo + NexT 8 添加友链](https://xiaoniuhululu.com/2022-05-09_Hexo+Next8_add_friends_page/)
 
 ## 7. 隐藏 Mist 边栏 Link 的点与下划线
+在 [自定义样式](#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F) 中添加  
 ```css
 /* 侧栏 Social Link */
 .links-of-author a::before{

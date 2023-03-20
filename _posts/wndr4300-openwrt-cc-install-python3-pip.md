@@ -6,7 +6,7 @@ categories:
 tags:
  - OpenWrt
  - WNDR4300
- - Python3
+ - Python
 ---
 WNDR4300 的 OpenWrt 15.05.1 的源仓库虽然有 python3 但是没有 python3-pip 和 python3-setuptools, python2.7 的倒是有。  
 <s>我又只看了 Python3 的教程</s>  

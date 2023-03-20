@@ -17,13 +17,13 @@ type: links
     </div>
 </div>
 
-<h2 class="post-title" style="text-align: center">一些链接</h2>
+<h2 class="post-title" style="text-align: center">一些书签</h2>
 
 ----
 
 <div class="links-content">
     <div class="link-navigation">
-        {% for link in site.data.linksex %}
+        {% for link in site.data.linkb %}
         <div class="card"><img class="ava nomediumzoom" src="{{ link.avatar }}" />
             <div class="card-header">
                 <div><a href="{{ link.site }}" target="_blank"> {{ link.name }}</a> </div>
@@ -43,5 +43,6 @@ type: links
   info: Aroes's Blog | \萌脇舞以/
   site: https://homulilly.com/
   avatar: https://homulilly.com/images/avatar.jpg
+  rss: https://homulilly.com/atom.xml
 ```
 
