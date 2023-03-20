@@ -17,7 +17,7 @@ type: links
     </div>
 </div>
 
-<h2 class="post-title" style="text-align: center">一些书签</h2>
+<p class="post-title" style="text-align: center">一些书签</p>
 
 ----
 
@@ -34,15 +34,5 @@ type: links
     </div>
 </div>
 
-<h2 class="post-title" style="text-align: center">友链格式</h2>
-
-----
-
-```md
-- name: Homulilly
-  info: Aroes's Blog | \萌脇舞以/
-  site: https://homulilly.com/
-  avatar: https://homulilly.com/images/avatar.jpg
-  rss: https://homulilly.com/atom.xml
-```
-
+<br />
+<hr style="width: 35%; margin: auto">
