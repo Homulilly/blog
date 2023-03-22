@@ -35,4 +35,4 @@ type: links
 </div>
 
 <br />
-<hr style="width: 35%; margin: auto">
+

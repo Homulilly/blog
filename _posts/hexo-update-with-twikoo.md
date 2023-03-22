@@ -96,7 +96,6 @@ motion:
 ```css
 .menu {
   text-align: right;
-...
 }
 ```
 ~~或是编辑文件 `themes/next/source/css/_schemes/Mist/_menu.styl`~~
@@ -138,6 +137,18 @@ search:
 
 - **Disqus load after click**
 不会改了，~~反正也没有什么评论~~，正好也发现了 Twikoo ，换上。  
+
+- **隐藏 Logo 的上横线**
+这就需要编辑主题的源文件了  
+`next/layout/_partials/header/brand.njk`  
+找到下面内容， `<i class="logo-line"></i>` 一个是上横线，一个是下横线 
+```html
+<a href="{{ config.root }}" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <{% if is_home() or is_archive() %}h1{% else %}p{% endif %} class="site-title">{{ title }}</{% if is_home() or is_archive() %}h1{% else %}p{% endif %}>
+      <i class="logo-line"></i>
+</a>
+```
 
 ## 4. 设置 Twikoo
 

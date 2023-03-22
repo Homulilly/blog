@@ -17,16 +17,21 @@
 - name: Perfect Freeze!
   info: CEE
   site: https://blog.cee.moe/
-  avatar: https://avatars0.githubusercontent.com/u/5436953?v=3&s=460
+  avatar: https://avatars0.githubusercontent.com/u/5436953?v=3&s=180
 
 - name: Kiseki | 记录的轨迹
   info: HY 
   site: https://blog.kiseki.moe/
-  avatar: https://secure.gravatar.com/avatar/d5d993a32ce89c70317c7255232b560f.jpg?s=300
+  avatar: https://secure.gravatar.com/avatar/d5d993a32ce89c70317c7255232b560f.jpg?s=180
 
 - name: 小牛呼噜噜
   info: 专心|专注|专研
   site: https://www.xiaoniuhululu.com
   avatar: https://www.xiaoniuhululu.com/images/zj/head-portrait-image.png
+
+- name: 烧饼博客
+  info: 服务器运维、专业域名投资分析
+  site: https://u.sb
+  avatar: https://s3.rsb.net/apple-touch-icon.png
 
 
