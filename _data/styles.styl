@@ -1,3 +1,11 @@
+/* Twikoo 表情大小 */
+.tk-owo-emotion, .twikoo .OwO-item img {
+    width: 4em !important;
+}
+
+.OwO .OwO-body{
+    max-width: 550px !important;
+}
 
 /* 选中文字背景 */
 ::selection {
@@ -39,28 +47,20 @@
     margin-top: 1rem;
 }
 
-.link-navigation::after {
-    content: " ";
-    display: block;
-    clear: both;
+.link-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 可选：控制弹性项之间的水平间距 */
 }
 
 .card {
-    width: 300px;
+    width: 280px;
     font-size: 1rem;
     padding: 10px 20px;
     border-radius: 4px;
     transition-duration: 0.15s;
     margin-bottom: 1rem;
     display: flex;
-}
-
-.card:nth-child(odd) {
-    float: left;
-}
-
-.card:nth-child(even) {
-    float: right;
 }
 
 /* 鼠标悬浮时效果

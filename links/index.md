@@ -17,9 +17,11 @@ type: links
     </div>
 </div>
 
-<p class="post-title" style="text-align: center">一些书签</p>
+<br />
+<br />
+<p class="site-title" style="text-align: center">BOOKMARK</p>
 
-----
+---- 
 
 <div class="links-content">
     <div class="link-navigation">

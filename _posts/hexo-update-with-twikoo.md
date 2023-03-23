@@ -234,7 +234,7 @@ custom_file_path:
 
 编辑或是创建 `styles.styl`，加入下面的样式
 ```css
-Links 页面样式
+/* Links 页面样式 */
 #links {
     margin-top: 5rem;
 }
@@ -243,28 +243,26 @@ Links 页面样式
     margin-top: 1rem;
 }
 
+.link-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .link-navigation::after {
-    content: " ";
-    display: block;
-    clear: both;
+ content: " ";
+ display: block;
+ clear: both;
 }
 
 .card {
-    width: 300px;
+    width: 280px;
     font-size: 1rem;
     padding: 10px 20px;
     border-radius: 4px;
     transition-duration: 0.15s;
     margin-bottom: 1rem;
     display: flex;
-}
-
-.card:nth-child(odd) {
-    float: left;
-}
-
-.card:nth-child(even) {
-    float: right;
 }
 
 /* 鼠标悬浮时效果
