@@ -70,9 +70,9 @@ custom_file_path:
         snowflake.style.fontSize = `${size}px`;
         snowflake.style.opacity = Math.random() * 0.6 + (size > 18 ? 0.4 : 0);
         // 雪花下落、左右摆动和旋转动画的持续时间
-        const translateYDuration = Math.random() * 20 + 10;
+        const translateYDuration = Math.random() * 20 + 5;
         const translateXDuration = Math.random() * 5 + 2;
-        const rotationDuration = Math.random() * 5 + 1;
+        const rotationDuration = Math.random() * 3 + 1;
         const accumulateDuration = 10;
 
         // 动画开始时间
@@ -115,32 +115,17 @@ custom_file_path:
         document.body.appendChild(snowflake);
     }
 
-    // 启动下雪效果的函数，在侧边栏隐藏时，不启动
-    function startSnowfall() {
+    // 控制雪花生成速度的参数 (毫秒)
+    const snowflakeCreationInterval = 250;
+
+    // 动画启动函数
+    function snowfallAnimation() {
+        // 载入时若边栏是隐藏状态则不加载雪花
         const sidebarnav = document.querySelector('.sidebar');
         const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
         if (sidebarnavdisplay !== 'none') {
             createSnowflake();
         }
-    }
-    // 页面检测
-    function handleVisibilityChange() {
-        if (document.visibilityState === "visible") {
-            startSnowfall();
-        }
-    }
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    if (document.visibilityState === "visible") {
-        startSnowfall();
-    }
-
-    // 控制雪花生成速度的参数 (毫秒)
-    const snowflakeCreationInterval = 200;
-
-    function snowfallAnimation() {
-        createSnowflake();
         setTimeout(() => requestAnimationFrame(snowfallAnimation), snowflakeCreationInterval);
     }
 
