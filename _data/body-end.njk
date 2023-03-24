@@ -5,26 +5,35 @@
         const snowflake = document.createElement("span");
         snowflake.classList.add("snowflake");
 
-        // 10% 概率生成 ⛄，60% 概率生成 ❄, 30% 生成 ❅
+        // 生成不同的雪花
         const randomSnow = Math.random();
-        let snowStyle;
         if (randomSnow < 0.1) {
             snowflake.textContent = "⛄";
-        } else if (randomSnow < 0.7){
+        } else if (randomSnow < 0.6){
             snowflake.textContent = "❄";
-        } else {
+        } else if (randomSnow < 0.8){
             snowflake.textContent = "❅";
+        } else if (randomSnow < 0.9){
+            snowflake.textContent = "❉";
+        } else {
+            snowflake.textContent = "✥";
         }
 
-        // snowflake.textContent = Math.random() < 0.5 ? "❅" : "❄";
-
         snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.top = '-20px';
+        snowflake.style.top = '0px';
 
         // 设置雪花生成大小和透明度
-        const size = Math.random() * 18 + 12;
+        const size = Math.random() * 18 + 10;
         snowflake.style.fontSize = `${size}px`;
-        snowflake.style.opacity = Math.random() * 0.6 + 0.3;
+
+        const snowopcity = Math.random() * 0.6;
+
+        if (size > 18){
+            snowflake.style.opacity = snowopcity + 0.4;
+        }else{
+            snowflake.style.opacity = snowopcity;
+        }
+        
 
         // 设置下坠速度 越小越快
         const translateYDuration = Math.random() * 20 + 5;
@@ -34,17 +43,31 @@
 
         let startTime = null;
 
+        // 增加堆积时间
+        const accumulateDuration = 10;
+
         function update(timestamp) {
             if (!startTime) startTime = timestamp;
 
             const progress = (timestamp - startTime) / 1000;
-            const translateY = (progress / translateYDuration) * 2000;
+            let translateY = (progress / translateYDuration) * 2000;
             const translateX = Math.sin((progress / translateXDuration) * Math.PI) * 100;
             const rotation = (progress / rotationDuration) * 360;
 
+                // 当雪花到达窗口底部时，停止下落并堆积
+                if (translateY + snowflake.offsetHeight > window.innerHeight) {
+                    translateY = window.innerHeight - snowflake.offsetHeight;
+
+                // 如果堆积时间已经过去，则删除雪花
+                    if (progress > translateYDuration + accumulateDuration) {
+                        snowflake.remove();
+                        return;
+                    }
+                }
+
             snowflake.style.transform = `translateY(${translateY}px) translateX(${translateX}px) rotate(${rotation}deg)`;
 
-            if (progress < translateYDuration) {
+            if (progress < translateYDuration + accumulateDuration) {
                 requestAnimationFrame(update);
             } else {
                 snowflake.remove();

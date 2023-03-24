@@ -44,6 +44,124 @@ custom_file_path:
 
 在 `body-end.njk` 中加入 JS 代码
 
+- 雪花随机大小
+- 有三种样式
+- 落到底部会堆叠一段时间
+
+```js
+<script>
+    let snowflakeInterval;
+
+    function createSnowflake() {
+        const snowflake = document.createElement("span");
+        snowflake.classList.add("snowflake");
+
+        // 生成不同的雪花
+        const randomSnow = Math.random();
+        if (randomSnow < 0.1) {
+            snowflake.textContent = "⛄";
+        } else if (randomSnow < 0.6){
+            snowflake.textContent = "❄";
+        } else if (randomSnow < 0.8){
+            snowflake.textContent = "❅";
+        } else if (randomSnow < 0.9){
+            snowflake.textContent = "❉";
+        } else {
+            snowflake.textContent = "✥";
+        }
+
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.top = '0px';
+
+        // 设置雪花生成大小和透明度
+        const size = Math.random() * 18 + 10;
+        snowflake.style.fontSize = `${size}px`;
+
+        const snowopcity = Math.random() * 0.6;
+
+        if (size > 18){
+            snowflake.style.opacity = snowopcity + 0.4;
+        }else{
+            snowflake.style.opacity = snowopcity;
+        }
+        
+
+        // 设置下坠速度 越小越快
+        const translateYDuration = Math.random() * 20 + 5;
+        const translateXDuration = Math.random() * 5 + 2;
+        // 设置旋转速度
+        const rotationDuration = Math.random() * 3 + 1;
+
+        let startTime = null;
+
+        // 增加堆积时间
+        const accumulateDuration = 10;
+
+        function update(timestamp) {
+            if (!startTime) startTime = timestamp;
+
+            const progress = (timestamp - startTime) / 1000;
+            let translateY = (progress / translateYDuration) * 2000;
+            const translateX = Math.sin((progress / translateXDuration) * Math.PI) * 100;
+            const rotation = (progress / rotationDuration) * 360;
+
+                // 当雪花到达窗口底部时，停止下落并堆积
+                if (translateY + snowflake.offsetHeight > window.innerHeight) {
+                    translateY = window.innerHeight - snowflake.offsetHeight;
+
+                // 如果堆积时间已经过去，则删除雪花
+                    if (progress > translateYDuration + accumulateDuration) {
+                        snowflake.remove();
+                        return;
+                    }
+                }
+
+            snowflake.style.transform = `translateY(${translateY}px) translateX(${translateX}px) rotate(${rotation}deg)`;
+
+            if (progress < translateYDuration + accumulateDuration) {
+                requestAnimationFrame(update);
+            } else {
+                snowflake.remove();
+            }
+        }
+
+        requestAnimationFrame(update);
+        document.body.appendChild(snowflake);
+    }
+
+    
+    function startSnowfall() {
+        // 载入时若边栏是隐藏状态则不加载雪花
+        const sidebarnav = document.querySelector('.sidebar');
+        const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
+        if (sidebarnavdisplay !== 'none') {
+            // 设置雪花生成速度 数字越小越生成越快
+            snowflakeInterval = setInterval(createSnowflake, 350);
+        }
+    }
+
+    function stopSnowfall() {
+        clearInterval(snowflakeInterval);
+    }
+
+    function handleVisibilityChange() {
+        if (document.visibilityState === "visible") {
+            startSnowfall();
+        } else {
+            stopSnowfall();
+        }
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // 初始化时，如果页面可见，则开始生成雪花
+    if (document.visibilityState === "visible") {
+        startSnowfall();
+    }
+</script>
+```
+
+{% note info 不带底部堆叠的代码 %}
 ```js
 <script>
     let snowflakeInterval;
@@ -56,7 +174,7 @@ custom_file_path:
         snowflake.textContent = Math.random() < 0.1 ? "⛄" : "❄";
 
         snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.top = '-20px';
+        snowflake.style.top = '0px';
 
         // 设置雪花生成大小和透明度
         const size = Math.random() * 18 + 12;
@@ -133,6 +251,7 @@ snowflake.textContent = Math.random() < 0.1 ? "⛄" : "❄";
 // 设置成其他字符也是可以的
 snowflake.textContent = "❄"
 ```
+{% endnote %}
 
 ### 添加样式
 
