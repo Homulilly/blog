@@ -48,121 +48,106 @@ custom_file_path:
 - 有三种样式
 - 落到底部会堆叠一段时间
 
-```js
+```js _data/body-end.njk v2
 <script>
-    let snowflakeInterval;
-
+    // 雪花字符
+    const snowflakes = ["⛄", "❄", "❅", "❉", "✥"];
+    // 雪花创建函数
     function createSnowflake() {
         const snowflake = document.createElement("span");
         snowflake.classList.add("snowflake");
+        const randomIndex = Math.floor(Math.random() * snowflakes.length);
+        snowflake.textContent = snowflakes[randomIndex];
 
-        // 生成不同的雪花
-        const randomSnow = Math.random();
-        if (randomSnow < 0.1) {
-            snowflake.textContent = "⛄";
-        } else if (randomSnow < 0.6){
-            snowflake.textContent = "❄";
-        } else if (randomSnow < 0.8){
-            snowflake.textContent = "❅";
-        } else if (randomSnow < 0.9){
-            snowflake.textContent = "❉";
-        } else {
-            snowflake.textContent = "✥";
-        }
-
+        // 雪花的初始位置
         snowflake.style.left = `${Math.random() * 100}vw`;
         snowflake.style.top = '0px';
-
-        // 设置雪花生成大小和透明度
+        // 雪花的大小与透明度
         const size = Math.random() * 18 + 10;
         snowflake.style.fontSize = `${size}px`;
-
-        const snowopcity = Math.random() * 0.6;
-
-        if (size > 18){
-            snowflake.style.opacity = snowopcity + 0.4;
-        }else{
-            snowflake.style.opacity = snowopcity;
-        }
-        
-
-        // 设置下坠速度 越小越快
-        const translateYDuration = Math.random() * 20 + 5;
+        snowflake.style.opacity = Math.random() * 0.6 + (size > 18 ? 0.4 : 0);
+        // 雪花下落、左右摆动和旋转动画的持续时间
+        const translateYDuration = Math.random() * 20 + 10;
         const translateXDuration = Math.random() * 5 + 2;
-        // 设置旋转速度
-        const rotationDuration = Math.random() * 3 + 1;
-
-        let startTime = null;
-
-        // 增加堆积时间
+        const rotationDuration = Math.random() * 5 + 1;
         const accumulateDuration = 10;
 
+        // 动画开始时间
+        let startTime = null;
+        // 更新雪花位置和旋转状态的函数
         function update(timestamp) {
             if (!startTime) startTime = timestamp;
-
+            
+            // 计算动画的进度
             const progress = (timestamp - startTime) / 1000;
+            // 计算雪花下落、左右摆动和旋转的位置
             let translateY = (progress / translateYDuration) * 2000;
             const translateX = Math.sin((progress / translateXDuration) * Math.PI) * 100;
             const rotation = (progress / rotationDuration) * 360;
 
-                // 当雪花到达窗口底部时，停止下落并堆积
-                if (translateY + snowflake.offsetHeight > window.innerHeight) {
-                    translateY = window.innerHeight - snowflake.offsetHeight;
+            // 当雪花到达屏幕底部时，使其停留并逐渐消失
+            if (translateY + snowflake.offsetHeight > window.innerHeight) {
+                translateY = window.innerHeight - snowflake.offsetHeight;
 
-                // 如果堆积时间已经过去，则删除雪花
-                    if (progress > translateYDuration + accumulateDuration) {
-                        snowflake.remove();
-                        return;
-                    }
+                if (progress > translateYDuration + accumulateDuration) {
+                    snowflake.remove();
+                    return;
                 }
+            }
 
+            // 更新雪花的位置和旋转状态
             snowflake.style.transform = `translateY(${translateY}px) translateX(${translateX}px) rotate(${rotation}deg)`;
 
+            // 如果动画尚未完成，继续请求下一帧
             if (progress < translateYDuration + accumulateDuration) {
                 requestAnimationFrame(update);
             } else {
                 snowflake.remove();
             }
         }
-
+        // 请求动画帧以开始更新雪花状态
         requestAnimationFrame(update);
+
+        // 将雪花元素添加到文档中
         document.body.appendChild(snowflake);
     }
 
-    
+    // 启动下雪效果的函数，在侧边栏隐藏时，不启动
     function startSnowfall() {
-        // 载入时若边栏是隐藏状态则不加载雪花
         const sidebarnav = document.querySelector('.sidebar');
         const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
         if (sidebarnavdisplay !== 'none') {
-            // 设置雪花生成速度 数字越小越生成越快
-            snowflakeInterval = setInterval(createSnowflake, 350);
+            createSnowflake();
         }
     }
-
-    function stopSnowfall() {
-        clearInterval(snowflakeInterval);
-    }
-
+    // 页面检测
     function handleVisibilityChange() {
         if (document.visibilityState === "visible") {
             startSnowfall();
-        } else {
-            stopSnowfall();
         }
     }
 
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
-    // 初始化时，如果页面可见，则开始生成雪花
     if (document.visibilityState === "visible") {
         startSnowfall();
     }
+
+    // 控制雪花生成速度的参数 (毫秒)
+    const snowflakeCreationInterval = 200;
+
+    function snowfallAnimation() {
+        createSnowflake();
+        setTimeout(() => requestAnimationFrame(snowfallAnimation), snowflakeCreationInterval);
+    }
+
+    // 请求动画帧以循环创建雪花效果
+    requestAnimationFrame(snowfallAnimation);
 </script>
 ```
 
-{% note info 不带底部堆叠的代码 %}
-```js
+{% note info V1:不带底部堆叠的代码 %}
+```js _data/body-end.njk v1
 <script>
     let snowflakeInterval;
 
