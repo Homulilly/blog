@@ -1,0 +1,77 @@
+<script>
+    let snowflakeInterval;
+
+    function createSnowflake() {
+        const snowflake = document.createElement("span");
+        snowflake.classList.add("snowflake");
+
+        // 10% 概率生成雪人（⛄），90% 概率生成雪花（❄）
+        snowflake.textContent = Math.random() < 0.1 ? "⛄" : "❄";
+
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.top = '-20px';
+
+        // 设置雪花生成大小和透明度
+        const size = Math.random() * 18 + 12;
+        snowflake.style.fontSize = `${size}px`;
+        snowflake.style.opacity = Math.random() * 0.6 + 0.3;
+
+        // 设置下坠速度 越小越快
+        const translateYDuration = Math.random() * 30 + 5;
+        const translateXDuration = Math.random() * 5 + 2;
+        // 设置旋转速度
+        const rotationDuration = Math.random() * 3 + 1;
+
+        let startTime = null;
+
+        function update(timestamp) {
+            if (!startTime) startTime = timestamp;
+
+            const progress = (timestamp - startTime) / 1000;
+            const translateY = (progress / translateYDuration) * 2000;
+            const translateX = Math.sin((progress / translateXDuration) * Math.PI) * 100;
+            const rotation = (progress / rotationDuration) * 360;
+
+            snowflake.style.transform = `translateY(${translateY}px) translateX(${translateX}px) rotate(${rotation}deg)`;
+
+            if (progress < translateYDuration) {
+                requestAnimationFrame(update);
+            } else {
+                snowflake.remove();
+            }
+        }
+
+        requestAnimationFrame(update);
+        document.body.appendChild(snowflake);
+    }
+
+    
+    function startSnowfall() {
+        // 载入时若边栏是隐藏状态则不加载雪花
+        const sidebarnav = document.querySelector('.sidebar');
+        const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
+        if (sidebarnavdisplay !== 'none') {
+            // 设置雪花生成速度 数字越小越生成越快
+            snowflakeInterval = setInterval(createSnowflake, 500);
+        }
+    }
+
+    function stopSnowfall() {
+        clearInterval(snowflakeInterval);
+    }
+
+    function handleVisibilityChange() {
+        if (document.visibilityState === "visible") {
+            startSnowfall();
+        } else {
+            stopSnowfall();
+        }
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // 初始化时，如果页面可见，则开始生成雪花
+    if (document.visibilityState === "visible") {
+        startSnowfall();
+    }
+</script>
