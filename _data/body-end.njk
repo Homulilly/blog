@@ -5,8 +5,18 @@
         const snowflake = document.createElement("span");
         snowflake.classList.add("snowflake");
 
-        // 10% 概率生成雪人（⛄），90% 概率生成雪花（❄）
-        snowflake.textContent = Math.random() < 0.1 ? "⛄" : "❄";
+        // 10% 概率生成 ⛄，60% 概率生成 ❄, 30% 生成 ❅
+        const randomSnow = Math.random();
+        let snowStyle;
+        if (randomSnow < 0.1) {
+            snowflake.textContent = "⛄";
+        } else if (randomSnow < 0.7){
+            snowflake.textContent = "❄";
+        } else {
+            snowflake.textContent = "❅";
+        }
+
+        // snowflake.textContent = Math.random() < 0.5 ? "❅" : "❄";
 
         snowflake.style.left = `${Math.random() * 100}vw`;
         snowflake.style.top = '-20px';
@@ -17,7 +27,7 @@
         snowflake.style.opacity = Math.random() * 0.6 + 0.3;
 
         // 设置下坠速度 越小越快
-        const translateYDuration = Math.random() * 30 + 5;
+        const translateYDuration = Math.random() * 20 + 5;
         const translateXDuration = Math.random() * 5 + 2;
         // 设置旋转速度
         const rotationDuration = Math.random() * 3 + 1;
@@ -52,7 +62,7 @@
         const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
         if (sidebarnavdisplay !== 'none') {
             // 设置雪花生成速度 数字越小越生成越快
-            snowflakeInterval = setInterval(createSnowflake, 500);
+            snowflakeInterval = setInterval(createSnowflake, 350);
         }
     }
 

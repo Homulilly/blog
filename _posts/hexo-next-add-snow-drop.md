@@ -64,7 +64,7 @@ custom_file_path:
         snowflake.style.opacity = Math.random() * 0.6 + 0.3;
 
         // 设置下坠速度 越小越快
-        const translateYDuration = Math.random() * 30 + 5;
+        const translateYDuration = Math.random() * 20 + 5;
         const translateXDuration = Math.random() * 5 + 2;
         // 设置旋转速度
         const rotationDuration = Math.random() * 3 + 1;
@@ -99,7 +99,7 @@ custom_file_path:
         const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
         if (sidebarnavdisplay !== 'none') {
             // 设置雪花生成速度 数字越小越生成越快
-            snowflakeInterval = setInterval(createSnowflake, 500);
+            snowflakeInterval = setInterval(createSnowflake, 350);
         }
     }
 
