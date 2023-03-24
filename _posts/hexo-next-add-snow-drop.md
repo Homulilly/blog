@@ -48,7 +48,10 @@ custom_file_path:
 - 有三种样式
 - 落到底部会堆叠一段时间
 
-```js _data/body-end.njk v2
+
+{% tabs 版本, 1 %}  
+<!-- tab V2:落到底部堆叠-->
+```js 
 <script>
     // 雪花字符
     const snowflakes = ["⛄", "❄", "❅", "❉", "✥"];
@@ -145,8 +148,9 @@ custom_file_path:
     requestAnimationFrame(snowfallAnimation);
 </script>
 ```
+<!-- endtab -->
+<!-- tab V1:不堆叠-->
 
-{% note info V1:不带底部堆叠的代码 %}
 ```js _data/body-end.njk v1
 <script>
     let snowflakeInterval;
@@ -236,7 +240,9 @@ snowflake.textContent = Math.random() < 0.1 ? "⛄" : "❄";
 // 设置成其他字符也是可以的
 snowflake.textContent = "❄"
 ```
-{% endnote %}
+<!-- endtab -->
+{% endtabs %}
+
 
 ### 添加样式
 
@@ -252,7 +258,6 @@ snowflake.textContent = "❄"
     position: fixed;
     color: white;
     display: block;
-    position: fixed;
     pointer-events: none;
     z-index: -1;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8);
