@@ -10,7 +10,7 @@ categories:
 主题的模板改成 NexT.Pisces 后，背景看着有些单调，就想加点特效。
 
 搜索一番，发现现在 NexT 主题可以很方便的引入自定义内容了，不需要修改主题的源文件，方便多了。   
-一通鼓捣，加上了雪花飘落的效果。  
+通过咨询 ChatGPT ，加上了雪花飘落的效果。  
 
 下面是具体的添加方法。
 
@@ -46,10 +46,72 @@ custom_file_path:
 
 - 雪花随机大小
 - 有三种样式
-- 落到底部会堆叠一段时间
+- 落到底部会停留一段时间
 
 
 {% tabs 版本, 1 %}  
+<!-- tab V3:优化版-->
+将动画交给 CSS 处理
+```js
+<script>
+    const snowflakes = ["⛄", "❄", "❄", "❄", "❅", "❉", "✥"];
+    // 创建雪花
+    function createSnowflake() {
+        const snowflake = document.createElement("span");
+        snowflake.classList.add("snowflake");
+        const randomIndex = Math.floor(Math.random() * snowflakes.length);
+        snowflake.textContent = snowflakes[randomIndex];
+        
+        // 起始位置
+        /* 80%概率 生成在页面两侧 30% 的位置
+        const probability = Math.random();
+        let startPosition = Math.random() * 100;
+
+        if (probability < 0.8) {
+            startPosition = Math.random() < 0.5 ? Math.random() * 30 : (Math.random() * 30) + 70;
+        }
+        snowflake.style.left = `${startPosition}vw`;
+        */
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.top = `-30px`;
+        // 雪花大小与透明度
+        const size = Math.random() * 18 + 10;
+        snowflake.style.fontSize = `${size}px`;
+        const opacity = Math.random() * 0.6 + (size > 18 ? 0.4 : 0);
+        snowflake.style.setProperty("--opacity", opacity);
+        // 动画持续时间
+        const fallDuration = Math.random() * 10 + 10;
+        // 旋转持续时间
+        const rotateDuration = Math.random() * 3 + 1;
+
+        snowflake.style.animationDuration = `${fallDuration}s, ${fallDuration}s`; // 向 CSS 添加淡出动画的持续时间
+        // 横向幅度
+        const translateX = (Math.random() * 400 - 200);
+        snowflake.style.setProperty("--translateX", `${translateX}px`);
+        // 纵向幅度
+        snowflake.style.setProperty("--translateY", `${window.innerHeight}px`);
+
+        document.body.appendChild(snowflake);
+        // 移除雪花
+        setTimeout(() => {
+            snowflake.remove();
+        }, fallDuration * 1000);
+    }
+    
+    function snowfallAnimation() {
+        // 载入时若边栏是隐藏状态则不加载雪花
+        const sidebarnav = document.querySelector('.sidebar');
+        const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
+        if (sidebarnavdisplay !== 'none') {
+            createSnowflake();
+        }
+        setTimeout(snowfallAnimation, 150); // 生成速度，毫秒
+    }
+    snowfallAnimation();
+</script>
+```
+<!-- endtab -->
+
 <!-- tab V2:落到底部堆叠-->
 ```js 
 <script>
@@ -237,6 +299,48 @@ snowflake.textContent = "❄"
 - 鼠标无法选择
 - 加入一点荧光
 
+{% tabs 版本, 1 %} 
+<!-- tab V3-->
+```css
+/* 雪花 */
+.snowflake {
+    position: fixed;
+    pointer-events: none;
+    animation-name: snowflakeFallRotate, snowflakeFadeOut;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    color: white;
+    pointer-events: none;
+    z-index: -1;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes snowflakeFallRotate {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+    /* 下落到底部所用时间 */ 
+    70% {
+        transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(720deg);
+    }
+    100% {
+        transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(800deg);
+    }
+}
+
+@keyframes snowflakeFadeOut {
+    0%, 90% {
+        opacity: var(--opacity);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* 雪花 END */
+```
+<!-- endtab --> 
+<!-- tab V1/V2-->
 ```css
 /* 雪花 */
 .snowflake {
@@ -248,6 +352,8 @@ snowflake.textContent = "❄"
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8);
 }
 ```
+<!-- endtab --> 
+{% endtabs %} 
 
 此时可以 `hexo g && hexo s` 预览了。
 

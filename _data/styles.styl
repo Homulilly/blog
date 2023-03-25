@@ -126,13 +126,39 @@
 /* 雪花 */
 .snowflake {
     position: fixed;
+    pointer-events: none;
+    animation-name: snowflakeFallRotate, snowflakeFadeOut;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     color: white;
-    display: block;
-
     pointer-events: none;
     z-index: -1;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8), 0 0 5px rgba(255, 255, 255, 0.8);
 }
+
+@keyframes snowflakeFallRotate {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+    /* 下落到底部所用时间 */ 
+    70% {
+        transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(720deg);
+    }
+    100% {
+        transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(800deg);
+    }
+}
+
+@keyframes snowflakeFadeOut {
+    0%, 90% {
+        opacity: var(--opacity);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* 雪花 END */
 
 /* 修改一些主题色 */
 .sidebar-toc-active .sidebar-nav-toc, 
@@ -157,7 +183,6 @@
 .post-body .tabs ul.nav-tabs li.tab.active,
 .tabs-comment ul.nav-tabs li.tab.active {
     border-top-color: #ff69b4;
-    border-left-color: #ee3792;
 }
 /* 修改一些主题色 END */
 
