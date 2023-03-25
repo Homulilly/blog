@@ -257,7 +257,7 @@ snowflake.textContent = "❄"
 
 ```css
 /* 设置左侧边栏透明 */
-.sidebar, .header, {
+.sidebar {
     opacity: 0.85;
 }
 
