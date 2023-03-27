@@ -171,21 +171,38 @@
 .post-toc .nav .active > a,
 .post-body .tabs ul.nav-tabs li.tab.active,
 .tabs-comment ul.nav-tabs li.tab.active {
-    color: #ff69b4;
+    color: #39C5BB;
 }
 
 .sidebar-toc-active .sidebar-nav-toc,
 .sidebar-overview-active .sidebar-nav-overview,
 .post-toc .nav .active > a {
-    border-bottom-color: #ff69b4;
+    border-bottom-color: #39C5BB;
 }
 
 .post-body .tabs ul.nav-tabs li.tab.active,
 .tabs-comment ul.nav-tabs li.tab.active {
-    border-top-color: #ff69b4;
+    border-top-color: #39C5BB;
 }
 /* 修改一些主题色 END */
 
 .brand{
     color: white;
+}
+
+body {
+    position: relative;
+    background: url("/images/miku.webp") no-repeat fixed right top;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.95),rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)); /* 使用线性渐变实现透明度渐变 */
+    z-index: -2;
 }

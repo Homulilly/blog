@@ -1,5 +1,5 @@
 <script>
-    const snowflakes = ["⛄", "❄", "❄", "❄", "❅", "❉", "✥"];
+    const snowflakes = ["⛄", "❄", "❄", "❆", "❅", "✥"];
     // 创建雪花
     function createSnowflake() {
         const snowflake = document.createElement("span");
@@ -31,7 +31,7 @@
 
         snowflake.style.animationDuration = `${fallDuration}s, ${fallDuration}s`; // 向 CSS 添加淡出动画的持续时间
         // 横向幅度
-        const translateX = (Math.random() * 400 - 200);
+        const translateX = (Math.random() * 500 - 200);
         snowflake.style.setProperty("--translateX", `${translateX}px`);
         // 纵向幅度
         snowflake.style.setProperty("--translateY", `${window.innerHeight}px`);

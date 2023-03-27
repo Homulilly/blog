@@ -31,7 +31,7 @@ NexT v8.15.0
 custom_file_path:
   # 存放自定义 CSS 样式
   style: source/_data/styles.styl
-  # 存放自定义的 Javascript 脚本
+  # 存放在 <body> 末尾加载的内容
   bodyEnd: source/_data/body-end.njk
 ```
 
@@ -51,10 +51,10 @@ custom_file_path:
 
 {% tabs 版本, 1 %}  
 <!-- tab V3:优化版-->
-将动画交给 CSS 处理
+将动画交给 CSS 处理，不过动态效果还是使用 JS 处理动画的表现更好
 ```js
 <script>
-    const snowflakes = ["⛄", "❄", "❄", "❄", "❅", "❉", "✥"];
+    const snowflakes = ["⛄", "❄", "❄", "❆", "❅", "✥"];
     // 创建雪花
     function createSnowflake() {
         const snowflake = document.createElement("span");
@@ -86,7 +86,7 @@ custom_file_path:
 
         snowflake.style.animationDuration = `${fallDuration}s, ${fallDuration}s`; // 向 CSS 添加淡出动画的持续时间
         // 横向幅度
-        const translateX = (Math.random() * 400 - 200);
+        const translateX = (Math.random() * 500 - 200);
         snowflake.style.setProperty("--translateX", `${translateX}px`);
         // 纵向幅度
         snowflake.style.setProperty("--translateY", `${window.innerHeight}px`);
