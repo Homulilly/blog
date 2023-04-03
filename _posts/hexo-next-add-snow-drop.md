@@ -364,12 +364,15 @@ snowflake.textContent = "❄"
 ```css
 /* 设置左侧边栏透明 */
 .sidebar {
-    opacity: 0.85;
+    opacity: 0.75;
 }
 
-/* 设置文章部分透明 */
-.main-inner {
-    opacity: 0.95;
+/* 文章和导航菜单透明，但文字不透明 */
+.header, .main-inner {
+    background-color: rgba(39,39,42,0.8)
+}
+.menu-item a:hover, .menu-item a.menu-item-active {
+    background-color: rgba(39,39,42,0.1)
 }
 ```
 
