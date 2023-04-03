@@ -396,6 +396,13 @@ git commit -m "create build-pages.yml"
 example.com
 ```
 
+{% note info %}
+CNAME 文件应该存在于在 `gh-pages` 分支，所以要前往 `.vuepress/public` 目录下创建 CNAME 文件
+否则每次自动执行 `Github Actions` 之后，设置中的自定义域名设置都会重置
+{% endnote %}
+
+使用 CNAME 则不需要手动前往 `Settings` 设置自定义域名，等待 `Github Actions` 执行完成之后即可访问域名查看
+
 ### 添加自定义域名
 
 前往 Repo 的 `Settings`，在 `Pages` 的 `Custom domain` 中填写自定义域名。 
@@ -407,5 +414,3 @@ example.com
 {% note info %}
 域名是放在 Cloudflare 解析的话，如果 Github 提示解析出错，可以先暂停 Cloudflare 的 CDN
 {% endnote %}
-
-
