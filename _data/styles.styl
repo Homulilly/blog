@@ -116,11 +116,13 @@
 }
 
 .sidebar {
-    opacity: 0.85;
+    opacity: 0.75;
 }
-
-.main-inner {
-    opacity: 0.95;
+.header, .main-inner {
+    background-color: rgba(39,39,42,0.8)
+}
+.menu-item a:hover, .menu-item a.menu-item-active {
+    background-color: rgba(39,39,42,0.1)
 }
 
 /* 雪花 */
@@ -141,17 +143,18 @@
     0% {
         transform: translateY(0) translateX(0) rotate(0);
     }
-    /* 下落到底部所用时间 */ 
+    /* 下落到底部所用时间  
     70% {
         transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(720deg);
     }
+    */
     100% {
         transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(800deg);
     }
 }
 
 @keyframes snowflakeFadeOut {
-    0%, 90% {
+    0%, 50% {
         opacity: var(--opacity);
     }
     100% {

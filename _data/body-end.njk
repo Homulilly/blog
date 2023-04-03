@@ -25,7 +25,7 @@
         const opacity = Math.random() * 0.6 + (size > 18 ? 0.4 : 0);
         snowflake.style.setProperty("--opacity", opacity);
         // 动画持续时间
-        const fallDuration = Math.random() * 10 + 10;
+        const fallDuration = Math.random() * 10 + 5;
         // 旋转持续时间
         const rotateDuration = Math.random() * 3 + 1;
 
@@ -34,7 +34,8 @@
         const translateX = (Math.random() * 500 - 200);
         snowflake.style.setProperty("--translateX", `${translateX}px`);
         // 纵向幅度
-        snowflake.style.setProperty("--translateY", `${window.innerHeight}px`);
+        // * 0.3 只在上面 30% 部分
+        snowflake.style.setProperty("--translateY", `${window.innerHeight * 0.3}px `);
 
         document.body.appendChild(snowflake);
         // 移除雪花
@@ -50,7 +51,7 @@
         if (sidebarnavdisplay !== 'none') {
             createSnowflake();
         }
-        setTimeout(snowfallAnimation, 150); // 生成速度，毫秒
+        setTimeout(snowfallAnimation, 250); // 生成速度，毫秒
     }
     snowfallAnimation();
 </script>
