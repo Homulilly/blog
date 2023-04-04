@@ -372,7 +372,7 @@ snowflake.textContent = "❄"
     background-color: rgba(39,39,42,0.8)
 }
 .menu-item a:hover, .menu-item a.menu-item-active {
-    background-color: rgba(39,39,42,0.1)
+    background-color: rgba(60,60,60,0.3);
 }
 ```
 
