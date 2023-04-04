@@ -1,5 +1,5 @@
 ---
-title: 更新 Hexo 和 NEXT 主题，使用 Twikoo 评论系统 
+title: 更新 Hexo 和 NexT 主题，使用 Twikoo 评论系统 
 date: 2023-03-18 23:30:05
 tags: 
  - Hexo
@@ -7,7 +7,7 @@ tags:
 categories:
  - Talk
 ---
-博客换到 Hexo 之后，就一直没有更新过 Hexo 和 Next 主题的版本，现在版本差的有些多。    
+博客换到 Hexo 之后，就一直没有更新过 Hexo 和 NexT 主题的版本，现在版本差的有些多。    
 ```sh
 hexo --version
 hexo: 3.4.1
@@ -407,3 +407,29 @@ type: atom
 path: atom.xml
 limit: 20
 ```
+
+## 9. 主题文件中硬编码的内容备份
+
+删除 NexT.Mist LOGO 顶部横线，删除第一个 `<i class="logo-line"></i>`
+```yaml themes\next\layout\_partials\header\brand.njk
+<a href="{{ config.root }}" class="brand" rel="start">
+  <i class="logo-line"></i>
+  <{% if is_home() or is_archive() %}h1{% else %}p{% endif %} class="site-title">{{ title }}</{% if is_home() or is_archive() %}h1{% else %}p{% endif %}>
+  <i class="logo-line"></i>
+</a>
+```
+
+导航菜单 `links` 翻译
+```yaml themes\next\languages\zh-CN.yml
+menu:
+  links: 友链
+```
+
+修改颜色
+```yaml themes\next\source\css\_variables\base.styl
+$black-dim    = #303134;
+
+$body-bg-color-dark           = #27272a;
+```
+
+

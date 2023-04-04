@@ -1,5 +1,5 @@
 ---
-title: Hexo NEXT 主题添加雪花飘落的效果
+title: Hexo NexT 主题添加雪花飘落的效果
 date: 2023-03-24 22:39:11
 tags:
  - Hexo
@@ -27,7 +27,7 @@ NexT v8.15.0
 使用了 Javascript 和 CSS 来实现效果
 
 在 NexT 主题的 `_config.yaml` 中，找到 `custom_file_path` ，取消对应的注释
-```yaml
+```yaml _config.yaml
 custom_file_path:
   # 存放自定义 CSS 样式
   style: source/_data/styles.styl
@@ -52,7 +52,7 @@ custom_file_path:
 {% tabs 版本, 1 %}  
 <!-- tab V3:优化版-->
 将动画交给 CSS 处理，不过动态效果还是使用 JS 处理动画的表现更好
-```js
+```js _data/body-end.njk
 <script>
     const snowflakes = ["⛄", "❄", "❄", "❆", "❅", "✥"];
     // 创建雪花
@@ -113,7 +113,7 @@ custom_file_path:
 <!-- endtab -->
 
 <!-- tab V2:落到底部堆叠-->
-```js 
+```js _data/body-end.njk
 <script>
     // 雪花字符
     const snowflakes = ["⛄", "❄", "❅", "❉", "✥"];
@@ -198,7 +198,7 @@ custom_file_path:
 <!-- endtab -->
 <!-- tab V1:不堆叠-->
 
-```js _data/body-end.njk v1
+```js _data/body-end.njk
 <script>
     let snowflakeInterval;
 
@@ -361,7 +361,7 @@ snowflake.textContent = "❄"
 
 我们可以在 `styles.styl` 中加入下面内容，加上一点透明效果。
 
-```css
+```css _data/styles.styl
 /* 设置左侧边栏透明 */
 .sidebar {
     opacity: 0.75;
