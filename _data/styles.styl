@@ -115,14 +115,23 @@
     border-radius: none !important;
 }
 
+
+/* 侧栏、主体添加透明 */
+
 .sidebar {
     opacity: 0.75;
 }
 .header, .main-inner {
-    background-color: rgba(39,39,42,0.8)
+    background-color: rgba(39,39,42,0.8);
 }
 .menu-item a:hover, .menu-item a.menu-item-active {
-    background-color: rgba(39,39,42,0.1)
+    background-color: rgba(60,60,60,0.3);
+}
+
+.main-menu .menu-item-active::after {
+    background: #39c5bb;
+    border-radius: 0;
+
 }
 
 /* 雪花 */
@@ -186,19 +195,17 @@
 .post-body .tabs ul.nav-tabs li.tab.active,
 .tabs-comment ul.nav-tabs li.tab.active {
     border-top-color: #39C5BB;
+    border-left-color: white;
 }
 /* 修改一些主题色 END */
 
-.brand{
-    color: white;
-}
-
+/* 添加背景图片 */
 body {
     position: relative;
     background: url("/images/miku.webp") no-repeat fixed right top;
     background-size: cover;
 }
-
+/* 背景添加透明渐变的阴影遮罩 */
 body::before {
     content: "";
     position: fixed;
