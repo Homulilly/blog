@@ -116,23 +116,7 @@
 }
 
 
-/* 侧栏、主体添加透明 */
 
-.sidebar {
-    opacity: 0.75;
-}
-.header, .main-inner {
-    background-color: rgba(39,39,42,0.8);
-}
-.menu-item a:hover, .menu-item a.menu-item-active {
-    background-color: rgba(60,60,60,0.3);
-}
-
-.main-menu .menu-item-active::after {
-    background: #39c5bb;
-    border-radius: 0;
-
-}
 
 /* 雪花 */
 .snowflake {
@@ -205,16 +189,45 @@ body {
     background: url("/images/miku.webp") no-repeat fixed right top;
     background-size: cover;
 }
-/* 背景添加透明渐变的阴影遮罩 */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.95),rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)); /* 使用线性渐变实现透明度渐变 */
-    z-index: -2;
+
+.sidebar {
+    opacity: 0.85;
+}
+.header, .main-inner {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.menu-item a:hover, .menu-item a.menu-item-active {
+    background-color: rgba(150,150,150,0);
+}
+.main-menu .menu-item-active::after {
+    background: #39c5bb;
+    border-radius: 0;
+}
+
+if (hexo-config('darkmode')) {
+    @media (prefers-color-scheme: dark){
+        /* 侧栏、主体添加透明 */
+        .sidebar {
+            opacity: 0.8;
+        }
+        .header, .main-inner {
+            background-color: rgba(39,39,39,0.75);
+        }
+
+
+        /* 背景添加透明渐变的阴影遮罩 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.95),rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)); /* 使用线性渐变实现透明度渐变 */
+            z-index: -2;
+        }
+    }
 }
 
 /* 代码块隐藏 */

@@ -87,11 +87,11 @@ custom_file_path:
 
 现在的问题是，如果代码块不写 `file or summary ` 内容的话，是没有这个 `<figcaption>` 标题栏的。 
 
-## 为大于三行的代码块添加标题栏
+## 手动添加代码块标题栏
 
-一两行的代码也没有必要进行折叠，所以添加一个检测，为大于三行且没有标题栏的代码块手动添加一个，最终代码如下
+一两行的代码也没有必要进行折叠，所以添加一个检测，为大于三行且没有标题栏的代码块手动添加一个，最终 `source/_data/body-end.njk` 的代码如下
 
-```js source/_data/body-end.njk
+```js 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // 查找所有 div.table-container 元素
@@ -102,7 +102,7 @@ custom_file_path:
       // 获取 div.table-container 内的 span 元素数量
       const spanCount = tableContainer.querySelectorAll("tbody > tr > td.code > pre > span").length;
 
-      // 检查 span 元素数量是否大于等于 3
+      // 检查 span 元素数量是否 >= 3
       if (spanCount >= 3) {
         // 检查 div.table-container 前面是否有 figcaption 元素，如果没有则添加一个
         const prevElement = tableContainer.previousElementSibling;
@@ -146,3 +146,10 @@ custom_file_path:
 ```
 
 然后预览一下，看一下效果，没有问题的话就可以推送到服务器了。
+
+测试  
+```sh
+hexo c
+hexo g
+heox d
+```

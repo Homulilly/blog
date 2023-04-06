@@ -51,8 +51,9 @@ custom_file_path:
 
 {% tabs 版本, 1 %}  
 <!-- tab V3:优化版-->
-将动画交给 CSS 处理，不过动态效果还是使用 JS 处理动画的表现更好
-```js _data/body-end.njk
+将动画交给 CSS 处理，不过动态效果还是使用 JS 处理动画的表现更好   
+[预览](https://m.nep.me/blog/post/snow-v3preview.mp4)
+```js source/_data/body-end.njk
 <script>
     const snowflakes = ["⛄", "❄", "❄", "❆", "❅", "✥"];
     // 创建雪花
@@ -113,7 +114,7 @@ custom_file_path:
 <!-- endtab -->
 
 <!-- tab V2:落到底部堆叠-->
-```js _data/body-end.njk
+```js source/_data/body-end.njk
 <script>
     // 雪花字符
     const snowflakes = ["⛄", "❄", "❅", "❉", "✥"];
@@ -198,7 +199,7 @@ custom_file_path:
 <!-- endtab -->
 <!-- tab V1:不堆叠-->
 
-```js _data/body-end.njk
+```js source/_data/body-end.njk
 <script>
     let snowflakeInterval;
 
@@ -361,21 +362,66 @@ snowflake.textContent = "❄"
 
 我们可以在 `styles.styl` 中加入下面内容，加上一点透明效果。
 
-```css _data/styles.styl
+```css source/_data/styles.styl
 /* 设置左侧边栏透明 */
 .sidebar {
-    opacity: 0.75;
+    opacity: 0.85;
+}
+.header, .main-inner {
+    background-color: rgba(255,255,255,0.8);
 }
 
-/* 文章和导航菜单透明，但文字不透明 */
-.header, .main-inner {
-    background-color: rgba(39,39,42,0.8)
-}
 .menu-item a:hover, .menu-item a.menu-item-active {
-    background-color: rgba(60,60,60,0.3);
+    background-color: rgba(150,150,150,0.1);
+}
+/* For DarkMode */
+if (hexo-config('darkmode')) {
+    @media (prefers-color-scheme: dark){
+        /* 侧栏、主体添加透明 */
+        .sidebar {
+            opacity: 0.8;
+        }
+        .header, .main-inner {
+            background-color: rgba(39,39,39,0.75);
+        }
+    }
 }
 ```
 
 本地预览没有问题，既可以推送到服务端了。
 
 ![:2233_卖萌:](https://m.nep.me/emoji/2233/9fdb0139c2e2a925eba87cd135b49c17eb08ba30.png)
+
+## 限制在顶部 30% 
+看了几天，确实花里胡哨 😅 ，只在顶部有一点效果就不错
+
+修改 JS
+```js source/_data/body-end.njk
+// 缩短动画持续时间
+const fallDuration = Math.random() * 10 + 5;
+
+// 限制纵向幅度
+snowflake.style.setProperty("--translateY", `${window.innerHeight * 0.3}px`);
+```
+
+修改样式文件动画的部分
+```css source/_data/styles.styl
+@keyframes snowflakeFallRotate {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+    }
+    /* 下落到底部所用时间 */  
+    100% {
+        transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(800deg);
+    }
+}
+
+@keyframes snowflakeFadeOut {
+    0%, 50% {
+        opacity: var(--opacity);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+```
