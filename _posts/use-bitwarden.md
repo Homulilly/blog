@@ -40,7 +40,7 @@ systemctl status docker
 systemctl enable docker
 ```
 
-##安装 Bitwarden
+## 安装 Bitwarden
 
 ### 1.获取 bitwarden_rs 镜像
 ```
@@ -51,7 +51,7 @@ Update 2023.01.09:
 解决自建 Bitwarden 服务端在 Chrome 扩展更新后无法登陆的问题  
 
 ```
-docker pull vaultwarden/server:1.27.0
+docker pull vaultwarden/server:latest
 ```
 
 > 参考 Chrome 商店评论: 
@@ -63,13 +63,12 @@ docker pull vaultwarden/server:1.27.0
 ### 2.运行服务端
 
 ```
-docker run -d --name bitwarden -v [Bitwarden 的数据存储路径]:/data/ -p 6666:80 vaultwarden/server:1.27.0	
+docker run -d --name bitwarden -v [Bitwarden 的数据存储路径]:/data/ -p 6666:80 vaultwarden/server:latest	
 ```
 默认会开启用户注册，毕竟自己使用时也要注册一个用户，自己注册完了之后可以在命令中加入下面的内容关闭注册
 
 ```
 -e SIGNUPS_ALLOWED=false
-
 ```
 
 ### 3.设置 Nginx 反代
@@ -87,7 +86,6 @@ location / {
 ### 4.启动、停止服务端
 ```
 docker start/stop bitwarden
-
 ```
 
 ## Docker 命令
@@ -106,11 +104,11 @@ docker rm $name
 docker ps -as
 ```
 
-##
+## 更新
 ```
 # 1. 重新获取镜像
 #docker pull bitwardenrs/server:latest
-docker pull vaultwarden/server:1.27.0
+docker pull vaultwarden/server:latest
 
 # 2. 停止、删除原容器
 docker stop bitwarden
@@ -132,7 +130,7 @@ docker image rm $ID
 systemctl enable docker 
 
 # 设置容器自动重启
-docker run -d --restart=always --name 容器名称 镜像
+docker run -d --restart always --name 容器名称 镜像  
 ```
   - no //默认，容器退出后不重启
   - on-failure //非正常退出后重启
@@ -146,5 +144,50 @@ docker run -d --restart=always --name 容器名称 镜像
 docker update --restart=always 容器 ID / 容器名称
 ```
 
-
 参考: [搭建自己的密码管理服务器 Bitwarden](https://cloud.tencent.com/developer/article/1578102)
+
+## 使用 `docker compose`
+每次更新都需要删除再重建，确实不便，尤其是使用了多个 docker 服务的时候，可以使用 `docker compose` 管理。
+现在 `docker compose` 已内置进 docker cli 命令中，无需手动安装 
+
+创建 `docker-compose.yaml` 文件，填入下面的内容
+
+```yaml docker-compose.yaml
+version: '3'
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    ports: 
+      - "6666:80"
+    environment:
+      # WEBSOCKET_ENABLED: "true"  # Enable WebSocket notifications.
+      SIGNUPS_ALLOWED: "false"
+      INVITATIONS_ALLOWED: "false"
+    volumes: 
+      - [Bitwarden 的数据存储路径]:/data/
+    restart: always
+```
+
+随后运行启动命令就可以了  
+- `docker-compose build`: 启动构建，构建在 yml 文件中定义的所有镜像
+- `docker compose up`: 启动容器
+- `docker compose up -d`: 启动容器并后台运行
+- `docker compose down`: 停止由 up 命令启动的所有容器
+- `docker compose ps`: 列出由 up 命令启动的所有容器
+- `docker compose images`: 由 build 命令构建的所有镜像
+- `docker compose logs`: 查询日志
+- `docker compose start <service>`: 启动 yml 中定义的单个服务，使用服务名，不是容器名
+- `docker compose stop <service>`: 停止 yml 中定义的单个服务
+- `docker compose rm <service>`: 删除已停止的某个服务
+- `docker compose config`: 验证 yml 文件有效性
+
+`docker-compose.yaml` 文件中可以同时填写多个容器，更新单个容器可以执行下面的操作，已设置 `alias dc="docker compose"`
+```sh
+docker pull <xxx/image:latest>
+dc stop $name
+dc rm $name
+dc up -d
+```
+
+参考: [使用Docker-Compose管理多容器应用](https://www.cnblogs.com/xhy0826/p/Docker-Compose-ASPNETCORE.html)

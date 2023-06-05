@@ -50,7 +50,8 @@ custom_file_path:
         const iElement = document.createElement("i");
         iElement.className = "fas fa-angle-down";
         // 插入一点空格
-        iElement.innerHTML = "&nbsp;&nbsp;";
+        iElement.innerHTML = "&nbsp;&nbsp;&nbsp;";
+        iElement.style.userSelect = "none";
         span.parentNode.insertBefore(iElement, span);
   
         // 查找相邻的 <div class="table-container">

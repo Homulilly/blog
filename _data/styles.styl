@@ -112,11 +112,16 @@
 
 /* 提示块圆角 */
 .post-body .note{
-    border-radius: none !important;
+    border-radius: 0px;
 }
 
+.btn {
+    border-radius: 0px ;
+}
 
-
+.copy-btn {
+    background: #fafafa
+}
 
 /* 雪花 */
 .snowflake {
@@ -196,7 +201,6 @@ body {
 .header, .main-inner {
     background-color: rgba(255,255,255,0.8);
 }
-
 .menu-item a:hover, .menu-item a.menu-item-active {
     background-color: rgba(150,150,150,0);
 }
@@ -204,7 +208,11 @@ body {
     background: #39c5bb;
     border-radius: 0;
 }
+.site-brand-container {
+    background-color: rgba(0,0,0,0.75);
+}
 
+/* For DarkMode */
 if (hexo-config('darkmode')) {
     @media (prefers-color-scheme: dark){
         /* 侧栏、主体添加透明 */
@@ -214,7 +222,9 @@ if (hexo-config('darkmode')) {
         .header, .main-inner {
             background-color: rgba(39,39,39,0.75);
         }
-
+        .site-brand-container {
+            background-color: rgba(0,0,0,0.5);
+        }
 
         /* 背景添加透明渐变的阴影遮罩 */
         body::before {
@@ -224,13 +234,19 @@ if (hexo-config('darkmode')) {
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.95),rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)); /* 使用线性渐变实现透明度渐变 */
+            background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)); /* 使用线性渐变实现透明度渐变 */
             z-index: -2;
         }
+
+       .copy-btn {
+            color: white;
+            background: #1c1b1b;
+       }
     }
+
 }
 
-/* 代码块隐藏 */
+/* 代码块折叠 */
 .code-hidden {
     display: none;
   }

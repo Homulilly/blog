@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
       iElement.className = "fas fa-angle-down";
       // 插入一点空格
       iElement.innerHTML = "&nbsp;&nbsp;&nbsp;";
+      iElement.style.userSelect = "none";
       figcaption.insertBefore(iElement, figcaption.firstChild);
 
       // 为 <i> 标签添加点击事件

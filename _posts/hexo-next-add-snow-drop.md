@@ -363,17 +363,20 @@ snowflake.textContent = "❄"
 我们可以在 `styles.styl` 中加入下面内容，加上一点透明效果。
 
 ```css source/_data/styles.styl
-/* 设置左侧边栏透明 */
+/* 设置透明 */
 .sidebar {
     opacity: 0.85;
 }
 .header, .main-inner {
     background-color: rgba(255,255,255,0.8);
 }
-
 .menu-item a:hover, .menu-item a.menu-item-active {
     background-color: rgba(150,150,150,0.1);
 }
+.site-brand-container {
+    background-color: rgba(0,0,0,0.75);
+}
+
 /* For DarkMode */
 if (hexo-config('darkmode')) {
     @media (prefers-color-scheme: dark){
@@ -383,6 +386,9 @@ if (hexo-config('darkmode')) {
         }
         .header, .main-inner {
             background-color: rgba(39,39,39,0.75);
+        }
+        .site-brand-container {
+            background-color: rgba(0,0,0,0.5);
         }
     }
 }
