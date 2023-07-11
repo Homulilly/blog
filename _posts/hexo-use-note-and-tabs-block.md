@@ -25,7 +25,7 @@ categories:
 
 提示块可以实现折叠   
 ````
-{% note success 折叠的提示 %}
+{% note success 一个折叠的提示 %}
 一个折叠的 Success 提示
 {% endnote %}
 ````

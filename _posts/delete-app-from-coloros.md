@@ -155,6 +155,29 @@ adb shell pm uninstall -k --user 0 com.oplus.deepthinker
 
 #删除支付保护
 adb shell pm uninstall -k --user 0 com.coloros.securepay
+
+#删除omoji
+adb shell pm uninstall -k --user 0 com.oplus.omoji
+
+#删除metis
+adb shell pm uninstall -k --user 0 com.oplus.metis
+
+#删除多端设备协同onet
+adb shell pm uninstall -k --user 0 com.oplus.onet
+
+#删除第三方云端解决方案thirdkit
+adb shell pm uninstall -k --user 0 com.oplus.thirdkit
+
+#删除crashbox
+adb shell pm uninstall -k --user 0 com.oplus.crashbox
+
+#删除shelper
+adb shell pm uninstall -k --user 0 com.daemon.shelper
+
+# 删除主题商店（需要在，恢复出厂或者新开始不登陆账号的情况下，才可操作）(影响：无法下载第三方主题壁纸字体。自带的不受影响)
+adb shell pm uninstall -k --user 0 com.heytap.themestore
+# 建议停用
+adb shell pm disable-user com.heytap.themestore
 ```
 
 参考：
