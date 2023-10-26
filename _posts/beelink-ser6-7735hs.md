@@ -25,7 +25,10 @@ categories:
 Proxmox VE: [7.4-1](https://www.proxmox.com/en/downloads/item/proxmox-ve-7-4-iso-installer)
 
 ### 修复安装引导 Xorg
-PVE 使用图形界面安装，正常安装进行时会报错，`Ctrl + Alt + F2` 可以信息，需要在 `Ctrl + Alt + F1` 下执行下面的命令
+
+**PVE 8.x 可以直接进行图形安装，不需要额外操作**  
+
+PVE 使用图形界面安装，正常安装进行时会报错，`Ctrl + Alt + F2` 可以显示错误信息，需要在 `Ctrl + Alt + F1` 下执行下面的命令
 
 ```bash
 Xorg -configure

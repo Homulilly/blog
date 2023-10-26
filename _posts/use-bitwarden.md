@@ -182,12 +182,30 @@ services:
 - `docker compose rm <service>`: 删除已停止的某个服务
 - `docker compose config`: 验证 yml 文件有效性
 
-`docker-compose.yaml` 文件中可以同时填写多个容器，更新单个容器可以执行下面的操作，已设置 `alias dc="docker compose"`
+`docker-compose.yaml` 文件中可以同时填写多个容器，更新单个容器可以执行下面的操作
 ```sh
-docker pull <xxx/image:latest>
-dc stop $name
-dc rm $name
-dc up -d
+# 更新所有镜像
+docker compose pull  
+docker compose up -d 
+
+# 更新单个镜像
+docker compose pull $name 
+docker compose stop $name
+docker compose rm $name
+docker compose up -d
+
+# 删除历史镜像
+docker image prune
+```
+
+如果运行 `docker compose pull` 时报下面错误
+```sh
+error getting credentials - err: exit status 1, out: `GDBus.Error:org.freedesktop.DBus.Error.
+ServiceUnknown: The name org.freedesktop.secrets was not provided by any .service files`
+```
+安装下面软件包即可
+```sh
+apt install gnupg2 pass
 ```
 
 参考: [使用Docker-Compose管理多容器应用](https://www.cnblogs.com/xhy0826/p/Docker-Compose-ASPNETCORE.html)
