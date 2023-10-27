@@ -18,12 +18,12 @@ type: links
 </div>
 
 <br />
-<br />
-<p class="site-title" style="text-align: center">BOOKMARK</p>
+<!-- <br />
+<p class="site-title" style="text-align: center">BOOKMARK</p> -->
 
 ---- 
 
-<div class="links-content">
+<!-- <div class="links-content">
     <div class="link-navigation">
         {% for link in site.data.linkb %}
         <div class="card"><img class="ava nomediumzoom" src="{{ link.avatar }}" />
@@ -34,7 +34,7 @@ type: links
         </div>
         {% endfor %}
     </div>
-</div>
+</div> -->
 
 <br />
 
