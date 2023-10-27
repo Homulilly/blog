@@ -81,7 +81,7 @@ export default defineUserConfig({
 
 ## 安装主题
 ### 手动安装
-参考 [vuepress-reco - 快速开始](http://v2.vuepress-reco.recoluan.com/docs/guide/getting-started.html)，选择手动安装的方法
+参考 [vuepress-reco - github](https://github.com/vuepress-reco/vuepress-theme-reco)，选择手动安装的方法
 
 ```sh
 yarn add vuepress-theme-reco@next

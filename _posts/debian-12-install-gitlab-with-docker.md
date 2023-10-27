@@ -116,7 +116,7 @@ docker-compose up
 docker-compose up -d
 ```
 启动需要等待一些时间   
-第一次登陆使用用户 `root` ，密码在 `/opt/gitlab/vol/initial_root_password` 中查看，登入后可以在后台修改密码  
+第一次登陆使用用户 `root` ，密码在 `/opt/gitlab/vol/config/initial_root_password` 中查看，登入后可以在后台修改密码  
 登入后可以按照顶部提示关闭允许注册选项    
 `Settings` > `General` > `Sign-up restrictions`
 
