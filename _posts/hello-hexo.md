@@ -101,7 +101,11 @@ sudo adduser git
 # add ssh key
 sudo su git
 cd ~ && mkdir .ssh
+cd .ssh
 vim authorized_keys
+
+# 设置文件权限
+chmod 700 ../ssh && chmod 600 authorized_keys
 exit
 
 # change /bin/bash to /usr/bin/git-shell of user git
