@@ -174,15 +174,8 @@
     border-top-color: #39C5BB;
     border-left-color: white;
 }
+
 /* 修改一些主题色 END */
-
-/* 添加背景图片 */
-body {
-    position: relative;
-    background: url("/images/miku.webp") no-repeat fixed right top;
-    background-size: cover;
-}
-
 .sidebar {
     opacity: 0.85;
 }
@@ -208,22 +201,10 @@ if (hexo-config('darkmode')) {
             opacity: 0.8;
         }
         .header, .main-inner {
-            background-color: rgba(39,39,39,0.75)!important;
+            background-color: rgba(28, 28, 28, 0.75)!important;
         }
         .site-brand-container {
             background-color: rgba(0,0,0,0.5);
-        }
-
-        /* 背景添加透明渐变的阴影遮罩 */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)); /* 使用线性渐变实现透明度渐变 */
-            z-index: -2;
         }
 
        .copy-btn {
@@ -237,4 +218,4 @@ if (hexo-config('darkmode')) {
 /* 代码块折叠 */
 .code-hidden {
     display: none;
-  }
+}

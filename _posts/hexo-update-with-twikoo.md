@@ -23,7 +23,6 @@ hexo: 5.4.2
 {% note success %}
 样式修改可以放在自定义样式文件中，尽量避免修改主题的源文件
 跳转到 [添加自定义样式](#添加自定义样式文件)
-这样更新主题时只需要备份主题的 _config.yaml 即可
 {% endnote %}
 
 ## 1. 设置环境
@@ -46,8 +45,30 @@ git clone https://github.com/Homulilly/blog.git source
 ```
 
 ## 2. 编辑配置
-修改配置 `_config.yml` 和 `theme/next/_config.yml`   
-- 语言由 `zh-hans` 修改为 `zh-CN`
+修改配置 `_config.yml` 将主题设置为 `next`  
+  - 语言由 `zh-hans` 修改为 `zh-CN`
+
+使用独立的 `_config.[theme].yml` 文件（[Hexo 文档](https://hexo.io/zh-cn/docs/configuration.html#Using-an-Alternate-Config)），不在主题文件夹内修改配置，避免 git 更新时提示冲突  
+在 Hexo 主目录下执行下面的命令，然后修改 `_config.next.yml` 即可
+```sh
+cp themes/next/_config.yml _config.next.yml
+```
+
+## 2.1 使用 Git 分支处理主题源文件硬编码
+偶尔还是需要直接修改一下主题源代码，使用分支进行在进行更新时比较方便一些
+
+```sh
+# 新建并切换到 my 分支
+git checkout -b my
+
+# 更新时需要切换回 master 分支
+git checkout master
+git pull
+
+# 然后将更新合并至 my 分支
+git checkout my
+git merge master
+```
 
 ## 3. 问题处理
 预览
