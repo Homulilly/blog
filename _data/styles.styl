@@ -176,6 +176,14 @@
 }
 
 /* 修改一些主题色 END */
+
+/* 添加背景图片 */
+body {
+    position: relative;
+    background: url("/images/grid-black.svg") fixed;
+    background-size: 100px 100px;
+}
+
 .sidebar {
     opacity: 0.85;
 }
@@ -196,6 +204,11 @@
 /* For DarkMode */
 if (hexo-config('darkmode')) {
     @media (prefers-color-scheme: dark){
+        body {
+            position: relative;
+            background: url("/images/grid.svg") fixed;
+            background-size: 100px 100px;
+        }
         /* 侧栏、主体添加透明 */
         .sidebar {
             opacity: 0.8;
