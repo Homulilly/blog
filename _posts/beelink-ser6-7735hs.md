@@ -19,6 +19,7 @@ categories:
   - [PVE下安装Windows10并直通核显...](https://www.simaek.com/archives/69/)
 
 <!--more-->
+注： 这个机器网口太深，网线头卡扣正好全在口里，所以如果水晶头比较硬，最好处理一下，用胶带贴个一圈什么的
 
 ## 安装 PVE
 
