@@ -1,6 +1,8 @@
 ---
 title: 修复 Hexo Next 主题在 Chrome 下标题换行的问题
 date: 2016-10-23 22:59:40
+categories:
+ - Note
 tags:
  - Hexo
 ---
