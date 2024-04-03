@@ -7,8 +7,8 @@ categories:
  - Note
 ---
 
-OpenAI Translator 是很好用的翻译工具，但是 OpenAI 的 Key 是要钱的。  
-不过感谢财大气粗的 Google 提供了免费的 Gemini Pro。   
+OpenAI Translator 是很好用的翻译工具，但是使用 OpenAI 的 Key 是需要付费的，~~而且想付费也需要克服一些困难~~。  
+这里感谢财大气粗的 Google 提供了免费的 Gemini Pro。   
 
 首先要去 [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) 创建 API Key。
 

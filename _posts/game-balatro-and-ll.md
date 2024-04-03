@@ -21,6 +21,9 @@ Steam 售价 54 首发九折 48 块 6 。
 
 如果运气好刷到了好的小丑组合就很简单，我有一把只需要出单张牌就能通关。  
 
+![Balatro](https://m.nep.me/blog/post/game-balatro.jpg) 
+运气最好的一把，奈何三个亿打不动。
+
 通关后直接就是无尽模式，可以继续爽，虽然一两次之后分数线就很夸张就是了。
 
 ### 幻日夜羽 - 蜃景努玛梓 -   
@@ -35,3 +38,5 @@ Steam 售价 54 首发九折 48 块 6 。
 就是估计这游戏内容方面估计也就这样了，不会像 Slay the Spire 一样有持续的更新（ 
 
 ![Cards](https://m.nep.me/blog/post/game-ll-yohane.jpg)
+
+Update: 玩了几天，硬伤确实是内容太少了（ 

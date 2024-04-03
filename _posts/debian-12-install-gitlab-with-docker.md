@@ -176,6 +176,32 @@ docker-compose up
 docker-compose up -d
 ```
 
+GitLab 启动提示
+```
+gitlab | Current version: gitlab-ce=16.9.1-ce.0
+gitlab | 
+gitlab | Configure GitLab for your system by editing /etc/gitlab/gitlab.rb file
+gitlab | And restart this container to reload settings.
+gitlab | To do it use docker exec:
+gitlab | 
+gitlab |   docker exec -it gitlab editor /etc/gitlab/gitlab.rb
+gitlab |   docker restart gitlab
+gitlab | 
+gitlab | For a comprehensive list of configuration options please see the Omnibus GitLab readme
+gitlab | https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md
+gitlab | 
+gitlab | If this container fails to start due to permission problems try to fix it by executing:
+gitlab | 
+gitlab |   docker exec -it gitlab update-permissions
+gitlab |   docker restart gitlab
+```
+
+## 升级后无法启动
+
+Gitlab 部分版本不可以 [跨版本升级](https://docs.gitlab.com/ee/update/#upgrade-paths)，我是从 16.5.x 升级到 16.9.x 提示我需要先升级至 16.7.x 再更新至 16.9.x
+
+尝试了一下确实可以，可以在 [Docker Hub](https://hub.docker.com/r/gitlab/gitlab-ce/tags) 查看历史版本号 
+
 ## 参考  
 - [Centos 使用 Docker-compose 搭建私有Gitlab](https://cloud.tencent.com/developer/article/1924734)
 - [How to Install GitLab CE with Docker on Debian 12](https://www.howtoforge.com/how-to-install-gitlab-with-docker-on-debian-12/)

@@ -46,6 +46,11 @@ notepad $profile
 oh-my-posh init pwsh | Invoke-Expression
 ```
 
+{% note info %}
+Windows 11 新版本的记事本如果提示找不到指定路径，可以直接输入 `$profile` 输出对应的路径，手动创建一下
+或是直接在 `文档` 目录下创建一个 `WindowsPowerShell` 文件夹
+{% endnote %}
+
 然后重新打开一个 PowerShell 窗口，查看是否生效
 
 ### 修改主题
