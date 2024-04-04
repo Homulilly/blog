@@ -1,5 +1,5 @@
 ---
-title: Oneplus 12 - OxygenOS
+title: OnePlus 12 - OxygenOS
 date: 2024-04-02 15:45:14
 tags:
  - Oneplus
@@ -39,8 +39,8 @@ categories:
 
 稍微用了一下：
 - 摄像：比 X7 和 x100 还是要差一些的，但够我使用的了。   
-- 100w 快充是 OPPO 家私有协议，PD 只支持 18w，以及融合快充 33W。  
-- 屏幕方面嘛，感觉是不如手上的 7T PRO 的，不过切换到显示模式切换到生动后倒是和 7T Pro 差不多了，所以感觉还可以，至少省去了适应的过程。  
+- 100w 快充是 OPPO 家私有协议，PD 只支持 18w，以及融合快充 33w。  
+- 屏幕方面嘛，感觉是不如手上的 7T PRO 的，不过显示模式切换到生动后倒是和 7T Pro 的自然差不多了，所以感觉还可以，至少省去了适应的过程。  
 - 重量：带壳正好半斤（ 重了一点  
  
 ## 刷 OxygenOS 14 
@@ -59,3 +59,19 @@ categories:
 - OxygenOS 的短信 APP 就是 Google 原生的了，不像国产的会区分通知短信与普通号码的短信。  
 
 BL 重新上锁后可以正常使用指纹、面部解锁。
+
+### BUG
+**一加 12 刷 OxygenOS 后 Geekbench6 跑分过低**  
+我兴冲冲的打开 Geekbench 6 结果 CPU 只跑了单核 900+ 多核 4000+，GPU 跑分倒是正常 14000+   
+我一度怀疑我的 CPU 寄了，掏出我 7T Pro 的 855+ 都跑了 1000 分，搜了一下发现别人也有这种情况，还挺多。  
+ - [FB](https://www.facebook.com/groups/459902981411036/permalink/1601667763901213/?_rdr) 
+ - [Reddit](https://www.reddit.com/r/oneplus/comments/1akolqc/low_geekbench_score_fix_for_the_one_plus_12/)
+
+Reddit 的帖子说是扩展内存默认设置的 4G 的问题，设置可以选 4/8/12 ，我关闭以及几个选项都尝试了，都是 900 来分。  
+有评论说只是最新的系统(604)跑分 BUG -> [Reddit](https://www.reddit.com/r/oneplus/comments/1aihyjr/oneplus_12_whats_with_the_low_singlecore_scores/)。  
+
+扩展内存开到 8G，再打开始终开启高性能模式，终于跑到了 2176 + 6612 ，还没到 2200 标准分（
+
+本来用的嘎嘎流畅，跑分徒增痛苦。 
+
+![Geekbenck6](https://m.nep.me/blog/post/oneplus12-gb6.jpg)
