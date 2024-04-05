@@ -75,6 +75,19 @@ code-server --install-extension chadalen.vscode-jetbrains-icon-theme-2.18.0.vsix
 
 不过我暂时还没有需求，所以还未尝试。 
 
+### 修改 LOGO
+默认的 LOGO 不是很好看，可以自己替换，如果是使用 deb 安装的话，直接替换 `/usr/lib/code-server/src/browser/media/` 目录下的图标文件即可。  
+一共有五个：
+```sh
+favicon-dark-support.svg
+favicon.ico
+favicon.svg
+pwa-icon-192.png
+pwa-icon-512.png
+pwa-icon.png
+```
+可以在 [Yesicon](https://yesicon.app/) 方便的下载 svg 与 png 的格式的图片。  
+
 --- 
 
 这个文章就是在 Code Server 中创建、完成、推送的。
