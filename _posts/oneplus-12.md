@@ -1,5 +1,5 @@
 ---
-title: OnePlus 12 - OxygenOS
+title: OnePlus 12 与 OxygenOS 14 体验
 date: 2024-04-02 15:45:14
 tags:
  - Oneplus
@@ -14,34 +14,45 @@ categories:
 记录一下摸过的国产手机们  
 <!--more-->
 
+## 体验过的机器  
 - vivo x100 & x100 Pro  
 由于准备入手 vivo Pad3 Pro，所以优先考虑了 vivo 的生态， x100 系列拍照非常的不错，不过实机体验边框宽了一些，前置摄像头的挖孔感觉也比其他家的大一圈。  
 如果选的话，我会选 x100 ，Pro 的后置摄像头突出太高了，x100 就很舒服。  
 网上看了看评价说是扬声器属于比较差的，所以减分 
 
 - iQoo 12 & 12 Pro 
-要换自然要选 8gen 3 或是 9300 的，第一次在一家店看 iQoo 12 Pro ，两侧曲边的绿边很明显，所以直接 Pass 不过可能是个例，第二家也见到过，没有那么明显。  
-标准版是直屏，看起来还是可以，不过 iQoo 12 卖的并不便宜，比 x100 系列还要贵。  
+要换自然要选 8 gen3 或是 9300 的，第一次在一家店看 iQoo 12 Pro ，两侧曲边的绿边很明显，所以直接 Pass ,不过可能是个例，第二家也看了，没有那么明显。  
+标准版是直屏，摸起来手感不错，不过 iQoo 12 卖的并不便宜，比 x100 系列还要贵。  
+还有 iQoo Neo9 Pro 也是直屏的，但是摄像阉割太多。  
 
 - vivo X Fold 3 Pro
 折叠机太贵了，而且外屏观感不好，个人感觉不如 OPPO 家的 FIND N3 的外屏，不过展开内屏看着还是很带感的。  
 感觉没有必要。  
 
 - OPPO Finx X7 & X7 Ultra  
-不得不说，实机很是好看，后背的材质也是很舒服，看着非常有感觉，尤其是黑色中间还有织线，可惜 Ultra 太贵了，而且后置和 x100 Pro 一样隔手，标准版 X7 比较舒服一些。  
+不得不说，实机很是好看，后背的材质也是很舒服，看着非常有感觉，尤其是黑色中间还有织线，可惜 Ultra 太贵了，而且后置和 x100 Pro 一样突出太高，隔手，标准版 X7 比较舒服一些。  
+但是 Ultra 太贵。  
 
-- OnePlus 12 
-我是不太喜欢一加这个后置马桶盖的设计的，图片看起来就很不好看，手机壳也买不到好看的，所以之前用 11 的时候就感觉不爽，而且刚发售时还有大缝隙的质量问题，一开始根本没考虑 12。  
-不过看 Find X7 时，顺带看了一眼，不得不说，白色实机看着还行，挺有感觉的。  
-黑色的版本裸机手感好一些，但是摄像模组看起来丑。  
-打开京东看了一眼，正好还在百亿补贴，不过白色的只补 16 + 1T 的版本，于是多掏了 300 块，反正我也是希望买大容量的。  
-决定下单还一个比较重要的原因是，搜了一下发现一加 12 可以直接刷 OxygenOS 了，刷完后可以回锁 Bootloader 不会影响使用。  
+### OnePlus 12
 
-稍微用了一下：
-- 摄像：比 X7 和 x100 还是要差一些的，但够我使用的了。   
+我是不太喜欢一加这个马桶盖一样的后置摄像模组的设计，图片看起来就很不好看，手机壳也买不到好看的，所以之前用 11 的时候就感觉不爽，而且刚发售时还有大缝隙的质量问题，所以没打算没考虑 12。  
+不过我在实体店看 Find X7 时，顺带看了一眼旁边的 OnePlus 12 ，不得不说，白色版本实机看着还行，非常的有感觉。    
+手感不如黑色的舒服，但是现在手机都带壳使用了，好看才是第一位的。    
+当场打开京东看一眼，居然正好在百亿补贴，不过白色的只补 16 + 1T 的版本，于是多掏了 300 块，反正我也是更偏向于买大容量的版本。  
+我向销售人员出示了京东的价格，表示匹配不了，只能在线下单了。  
+决定购买 OnePlus 12 还一个比较重要的原因是，搜了一下发现 OnePlus 12 可以直接刷 OxygenOS 了，刷完后可以重新锁上 Bootloader ，不会影响使用。  
+到手后机器是 2023 年 12 月生产的，有些久了，估计是退换机，但是外观上并没有什么问题。后置摄像模组的缝隙已经处理好了，也没有胶水的样子。  
+屏幕也不是阴阳屏。  
+完美下车。  
+
+用了几天的使用体验：
+- 摄像方面听说是比不过 Find X7 和 x100 的，但足够我使用了，对焦很快，长焦也确实很牛。   
 - 100w 快充是 OPPO 家私有协议，PD 只支持 18w，以及融合快充 33w。  
-- 屏幕方面嘛，感觉是不如手上的 7T PRO 的，不过显示模式切换到生动后倒是和 7T Pro 的自然差不多了，所以感觉还可以，至少省去了适应的过程。  
+- 屏幕方面嘛，一开始感觉是不如手上的 7T PRO ，不过显示模式切换到生动后倒是和 7T Pro 的自然差不多了，没有色差，白色背景对比不会偏绿，完美。  
 - 重量：带壳正好半斤（ 重了一点  
+- OxygenOS：丝滑、流畅，非常的舒服。没有收不到通知的问题，完美。  
+- 面容识别解锁是真滴又快又方便，2024 年了，我终于跟上时代了。
+- OxygenOS 的短信 APP 就是 Google 原生的了，不像国产的会区分通知短信与普通号码的短信。但是现在基本都是通知短信了。     
  
 ## 刷 OxygenOS 14 
 
@@ -53,25 +64,35 @@ categories:
  - [XDA](https://xdaforums.com/t/how-to-convert-from-coloros-to-global-us-india-on-chinese-oneplus-12.4653255/)
  - [一加12 刷機 OxygenOS 14.0](https://www.mobile01.com/topicdetail.php?f=586&t=6920114)
 
+<img src="https://m.nep.me/blog/post/oneplus-12-about.jpg" alt="OnePlus 12" style="display: block; margin: auto; width: 50%;">
+
 ### 刷机注意事项    
-- 关机后，`电源` + `音量-` 进入 fastboot
+- 关机后，长按 `电源` + `音量-` 进入 fastboot
 - **刷完 OxygenOS 确保开机可以进入系统之后，再回锁 Bootloader**
-- OxygenOS 的短信 APP 就是 Google 原生的了，不像国产的会区分通知短信与普通号码的短信。  
+- 目前看起来更新最快的是印度版的系统 
+- BL 重新上锁后支付宝可以正常使用指纹与面部进行解锁、支付。
 
-BL 重新上锁后可以正常使用指纹、面部解锁。
+### 账号登陆问题
+设置最顶部的账号登陆不了，一点击就会自动跳转到大陆的一加网站，然后 404 ，看着非常的不爽。  
+可以访问网页版的 [Red Cabel Club - UK](https://www.oneplus.com/uk/redcableclub) 注册。  
+昵称和头像也要在网页改，手机上 `设置` > `账号` > `一加会员` 修改会提示不能跨境使用。  
+第一次登陆时挂个梯子吧。   
 
-### BUG
+### 跑分 BUG
 **一加 12 刷 OxygenOS 后 Geekbench6 跑分过低**  
-我兴冲冲的打开 Geekbench 6 结果 CPU 只跑了单核 900+ 多核 4000+，GPU 跑分倒是正常 14000+   
-我一度怀疑我的 CPU 寄了，掏出我 7T Pro 的 855+ 都跑了 1000 分，搜了一下发现别人也有这种情况，还挺多。  
+vivo Pad3 Pro 跑出了 2258 + 7223 的分数后，我兴冲冲的打开手机 Geekbench 6 结果 CPU 只跑了单核 900+ 多核 4000+，这是 8 Gen3 吗？  
+GPU 跑分倒是正常 14000+     
+我一度怀疑我的 CPU 寄了，掏出我 7T Pro 的 855+ 单核都跑了 1000 分，搜了一下发现别人也有这种情况，还挺多。  
  - [FB](https://www.facebook.com/groups/459902981411036/permalink/1601667763901213/?_rdr) 
  - [Reddit](https://www.reddit.com/r/oneplus/comments/1akolqc/low_geekbench_score_fix_for_the_one_plus_12/)
+ - [Your OnePlus Phone Can Be So Much Faster: Here's How](https://www.slashgear.com/1549879/one-plus-can-be-faster-heres-how/)
+   看起来只有 OnePlus 12 有这种情况。  
 
 Reddit 的帖子说是扩展内存默认设置的 4G 的问题，设置可以选 4/8/12 ，我关闭以及几个选项都尝试了，都是 900 来分。  
-有评论说只是最新的系统(604)跑分 BUG -> [Reddit](https://www.reddit.com/r/oneplus/comments/1aihyjr/oneplus_12_whats_with_the_low_singlecore_scores/)。  
+有评论说只是最新的系统(604)跑分 BUG -> [Reddit](https://www.reddit.com/r/oneplus/comments/1aihyjr/oneplus_12_whats_with_the_low_singlecore_scores/)，但我看有的评论说游戏也会卡。  
 
 扩展内存开到 8G，再打开始终开启高性能模式，终于跑到了 2176 + 6612 ，还没到 2200 标准分（
 
-本来用的嘎嘎流畅，跑分徒增痛苦。 
+本来用的嘎嘎流畅，只能说跑分徒增痛苦。 
 
-![Geekbenck6](https://m.nep.me/blog/post/oneplus12-gb6.jpg)
+<img src="https://m.nep.me/blog/post/oneplus12-gb6.jpg" alt="OnePlus 12 Geekbenck6" style="display: block; margin: auto; width: 50%;">
