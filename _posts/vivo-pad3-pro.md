@@ -35,9 +35,8 @@ categories:
 
 ### 9300 
 虽然听说跑分不如手机 x100 的版本，但也没差多少，依然 Android 阵营天下无敌。  
+看评测说是只有 7w 的性能释放，优先考虑散热，真的是一点也不热，也还是希望后期可以开放调度的。  
 ![vivo Pad3 Pro Geekbench 6 Score](https://m.nep.me/blog/post/vivopad-gb6.jpg)
-
-希望后期可以开放调度。  
 
 ### 系统  
 OriginOS 4 HD 使用体验下来真的是非常的顺滑。  
