@@ -96,11 +96,25 @@ pkg install python -y
 ```
 
 ### 定制常用按键 
-编辑文件 `~/.termux/termux.properties`   
+编辑文件 `~/.termux/termux.properties` 设置 `extra-keys`  
+下面是我的平板的使用的按键
+```
+extra-keys = [['ESC', '`',  '/', 'HOME', 'END', 'APOSTROPHE', 'QUOTE', 'ESC' ]]
+```
+
+### ESC 按键
+不知道是 Android 系统将 ESC 是为返回键，还是我的键盘配件的问题，我使用 Termux + Vim 编辑时无法正常使用 ESC ，需要自己定制。  
+搜索了一下发现，可以编辑 `~/.termux/termux.properties` 文件，找到下面的部分
+```bash
+### Send the Escape key.
+### 取消下面一行的注释
+back-key=escape
+```
+这样返回(包括全面屏手势)会被视为 ESC ，比较方便。   
 
 ### 问题
 使用 git 会报错
-```
+```sh
 fatal: detected dubious ownership in repository at '/storage/emulated/0/Documents/obsidian'
 To add an exception for this directory, call:
 

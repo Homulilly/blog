@@ -62,6 +62,8 @@ docker pull vaultwarden/server:latest
 
 ### 2.运行服务端
 
+Tips: 建议使用 `docker compose` 运行与管理
+
 ```
 docker run -d --name bitwarden -v [Bitwarden 的数据存储路径]:/data/ -p 6666:80 vaultwarden/server:latest	
 ```
@@ -159,7 +161,7 @@ services:
     image: vaultwarden/server:latest
     container_name: vaultwarden
     ports: 
-      - "6666:80"
+      - 127.0.0.1:6666:80
     environment:
       # WEBSOCKET_ENABLED: "true"  # Enable WebSocket notifications.
       SIGNUPS_ALLOWED: "false"

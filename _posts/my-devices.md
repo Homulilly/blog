@@ -59,7 +59,7 @@ VIVO NEX 发布时升降摄像头 + 全面屏我直接种草，三标准直接�
 - 拍照体验更好
 - 屏蔽比例长了些，玩 PCR 和 猫游有黑边
 11. 一加 12  
-  4.5/5 ，详见 [OnePlus 12 与 OxygenOS 14 体验](https://homulilly.com/post/oneplus-12.html)  
+  打分 4/5 ，详见 [OnePlus 12 与 OxygenOS 14 体验](https://homulilly.com/post/oneplus-12.html)  
   换机是因为长焦镜头与可以轻易刷 OxygenOS 。
 
 ### 心水过的手机
@@ -76,7 +76,7 @@ VIVO NEX 发布时升降摄像头 + 全面屏我直接种草，三标准直接�
   Pro 卖给了同事，看他用的情况，两个月比我两年用的还多。
   至于安卓平板，三星的太贵，其他家不用旗舰 CPU ，没有买过。
  - vivo Pad3 Pro: 
-  9300，这不冲？我只能说香。
+  9300，这不冲？我的评价是真香。
   详见 [vivo Pad3 Pro](https://homulilly.com/post/vivo-pad3-pro.html)。  
 
 ## 笔记本

@@ -22,7 +22,7 @@ categories:
 
 ### 大小
 13 寸还是比较大的，看实机的时候我也一起摸了一些其他的平板，如果是躺床使用，还是 11 寸以下比较舒服一些。  
-而且如果拿来看 EH 那么 **大，就是好**。  
+不过如果拿来看 EH 那么 **大，就是好**。  
 而且大一些显得边框窄。  
 
 ### 重量 
@@ -40,7 +40,7 @@ categories:
 
 ### 系统  
 OriginOS 4 HD 使用体验下来真的是非常的顺滑。  
-不过毕竟是国产的系统，总是有一些奇怪的问题，我从 Google Play 安装的 Solid Explorer 无法正常通过 Classic Key 解锁，之前 OPPO 的 Color 手动开放一些权限就可以，vivo 这个就完全不行，于是我又支持了一次开发者，毕竟用了 10 年的 APP 了。  
+不过毕竟是国产的系统，总是有一些奇怪的问题，我从 Google Play 安装的 Solid Explorer 无法正常通过 Classic Key 解锁，之前 OPPO 的 ColorOS 手动开放一些权限就可以，vivo 这个就完全不行，于是我又支持了一次开发者，毕竟用了 10 年的 APP 了。  
 
 还有不爽的是为了卖主题，设置里不能修改主题色，难受。
 
@@ -74,7 +74,7 @@ AI 模型叫蓝心小V，类似于 ChatGPT 的对话模型，也可以画图，�
 ### 设备互联
 很遗憾的是设备互联方面 OPPO 与 vivo 家并不互通，我手上的 OnePlus 只能干瞪眼。  
 远控 PC 需要在电脑上安装软件，目前还没有体验。    
-无法使用通信共享，但是有热点，不是问题。  
+无法使用通信共享，只能使用手机热点，还是数据版更好，可惜没有。  
 
 ### 贴膜
 以前我觉得不用贴膜，但是上次的 iPad Pro 被我一脚踹下了床，边缘就有了划痕，这次 vivo 没有说这个平板的屏幕玻璃硬度，估计一般般，我买了 vivo 官方商店的火车头钢化膜，39 元，贴上去看起来还是不错的。  
@@ -104,6 +104,10 @@ ADB 下载地址： [Android SDK Platform-Tools](https://developer.android.com/t
 adb devices
 # 然后允许 USB 调试
 
+# 列出软件包
+adb shell cmd package list packages
+adb shell cmd package list packages | find /i "vivo"
+
 # 停用百度输入法
 adb shell pm disable-user com.baidu.input_vivo
 
@@ -111,3 +115,4 @@ adb shell pm disable-user com.baidu.input_vivo
 adb shell pm disable-user com.vivo.browser
 ```
 
+不过浏览器停用后，第二天又更新出现了（  
