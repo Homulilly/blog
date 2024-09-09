@@ -107,6 +107,12 @@ ssh 登陆群晖，执行下面的命令
     索引完成后，在 DSM 主页可以查看视频缩略图进度  
     ![dsm-video-thumb](https://m.nep.me/minio/d/blog/post/dsm-video-thumb.jpg)
 
+### 注意事项
+#### 搬迁网络时，取消静态 IP 
+如果需要更换网络环境，记得先在群晖的设置中取消静态 IP 的设置。
+
+引导是通过 DHCP 获取的 IP ，如果群晖内设置了静态 IP ，引导完就访问不了啦，这种情况下，可以先将主路由器的 IP 网段设置与原网络一致，然后就能访问了。 
+
 ### 参考
 - [PVE安装黑群晖DSM7虚拟机及直通设置](https://blog.mstg.top/archives/762)  
 - [黑群晖NAS (ARPL引导)安装教程](https://post.smzdm.com/p/a4p69v7k/)

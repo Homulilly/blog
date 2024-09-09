@@ -93,14 +93,14 @@ export default defineConfig({
 访问二级文件夹目录的文件就会自动生成侧栏，如果有 `index.md` 则可以直接访问文件夹目录。   
 比如 `./docs/note/` -> `http://127.0.0.1:5173/note/`    
 
-不得不说，确实嘎嘎快。 、
+不得不说，确实嘎嘎快。 
 
 ## 使用
 ### 首页
 首页是编辑 `docs` 目录下的 `index.md` ，可以直接抄官方的 [index.md](https://github.com/vuejs/vitepress/blob/main/docs/zh/index.md?plain=1)
 ### 启用搜索
 使用 [本地搜索](https://vitepress.dev/zh/reference/default-theme-search#local-search) 即可，编辑配置文件 `.vitepress/config.mts` 
-```js{4-9}
+```js
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({

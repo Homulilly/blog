@@ -24,3 +24,12 @@ OpenAI Translator 是很好用的翻译工具，但是使用 OpenAI 的 Key 是�
 ```
 
 API 的使用情况可以在 [Google Cloud Dashboard](https://console.cloud.google.com/apis/dashboard) 中查看
+
+{% note success %}
+2024.4 月初收到邮件提示，Google 说将在 5 月 2 号起对 Cloud Billing 账号关联的项目的 Gemini API 收费。      
+>注意：本通知仅针对 Google AI for Developers 中的 Gemini API（在 Cloud 控制台中称为 Generative Language API），而与 Vertex AI Gemini API 无关。  
+  
+访问了项目相关的 `https://console.cloud.google.com/apis/library/generativelanguage.googleapis.com?project=<ProjectName>` 看到功能是未启用状态。  
+应该是没有影响。  
+不过保险起见，还是可以前往 [Google Cloud - 我的结算 - 我的项目](https://console.cloud.google.com/billing/projects) 停用结算功能。
+{% endnote %}

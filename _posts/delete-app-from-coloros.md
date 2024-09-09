@@ -17,8 +17,30 @@ categories:
 
 <!--more-->
 
-ADB 基础操作
+本文对应的是 `ColorOS 12`
+
+Google 官方 的 ADB 工具 Platform-Tools 下载地址 : [https://developer.android.com/tools/releases/platform-tools?hl=zh-cn](https://developer.android.com/tools/releases/platform-tools?hl=zh-cn)  
+
+Windows 使用资源管理器打开解压后的文件夹，在地址栏中输入 `cmd` 或是 `powershell` 即可快速打开终端界面。  
+
+手机开启 USB 调试，然后连接电脑，模式选择传输文件，在手机上选择 `允许 USB调试`，然后执行下面命令查看连接设备  
+```sh
+# 查看连接设备
+adb devices
+
+# 成功的结果输出
+List of devices attached
+xxxxxxx        device
 ```
+
+ColorOS 开启 USB 调试的方法  
+ - 打开 `设置` > 底部 `关于本机` > 打开 `版本信息`
+ - 多次点击版本号，输入锁屏密码解锁 `开发者选项`
+ - 打开 `设置` > 底部 `系统设置` > 打开 `开发者选项`  
+ - 找到 `调试` > 开启 `USB 调试`  
+
+ADB 基础操作
+```sh
 #删除
 adb shell pm uninstall -k --user 0 [Package Name]
 
@@ -37,7 +59,7 @@ adb shell pm list package [Package Name]
 
 操作 ColorOS 自带 APP 
 
-```
+```sh
 #停用速览
 adb shell pm disable-user com.coloros.assistantscreen
 

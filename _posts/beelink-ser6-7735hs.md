@@ -23,7 +23,7 @@ categories:
 
 ## 安装 PVE
 
-Proxmox VE: [7.4-1](https://www.proxmox.com/en/downloads/item/proxmox-ve-7-4-iso-installer)
+Proxmox VE: [7.4-1](https://www.proxmox.com/en/downloads/item/proxmox-ve-7-4-iso-installer)  
 
 ### 修复安装引导 Xorg
 
@@ -63,34 +63,50 @@ Err:4 https://enterprise.proxmox.com/debian/pve bullseye InRelease
 ### 1. 开启 iommu
 
 编辑文件 `/etc/default/grub`
+将 
+```sh
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 ```
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=pt initcall_blacklist=sysfb_init"/g' /etc/default/grub
+修改为(适用于 AMD 核显)
+```sh
+GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on"
+```
 
-update-grub
+一键修改命令
+```sh
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=pt initcall_blacklist=sysfb_init"/g' /etc/default/grub
 ```
+
+然后更新 grub 
+```sh
+update-grub
+
+reboot
+```
+
+重启 PVE ，可以执行下面的 `dmesg | grep -e DMAR -e IOMMU` 查看测试信息。  
 
 ### 2. 加载内核模块
-```
-cat >>/etc/modules <<EOF
+编辑 `/etc/modules` ，加入下面的内容
+```bash
 vfio
 vfio_iommu_type1
 vfio_pci
 vfio_virqfd
-EOF
 ```
 ### 3. 将显卡加入 PVE 的驱动黑名单
-```
-cat >>/etc/modprobe.d/pve-blacklist.conf <<EOF
+编辑 `/etc/modprobe.d/pve-blacklist.conf` ，加入下面的内容    
+
+```bash
 blacklist amdgpu
 blacklist snd_hda_intel
-EOF
 ```
 
 ### 4. 将显卡绑定至 vfio-pci
 
 其中显卡是 1002:1681，声卡是 1002:1640
 查找显卡 ID
-```
+```sh
 lspci
 ```
 输出如下 
@@ -108,7 +124,7 @@ lspci
 
 VGA 是显卡，Audio 是声卡，然后再运行下面的命令
 
-```
+```sh
 root@pve:~# lspci -n -s 74:00.0
 74:00.0 0300: 1002:1681 (rev 0a)
 
@@ -121,7 +137,7 @@ options vfio-pci ids=1002:1681,1002:1640
 ```
 
 ### 5. 刷新 initramfs 并重启 Proxmox VE
-```
+```sh
 update-initramfs -u -k all
 
 reboot

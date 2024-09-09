@@ -94,4 +94,19 @@ Reddit 的帖子说是扩展内存默认设置的 4G 的问题，设置可以选
 
 本来用的嘎嘎流畅，只能说跑分徒增痛苦。 
 
-<img src="https://m.nep.me/blog/post/oneplus12-gb6.jpg" alt="OnePlus 12 Geekbenck6" style="display: block; margin: auto; width: 50%;">
+<img src="https://m.nep.me/blog/post/oneplus-12-gb6.jpg" alt="OnePlus 12 Geekbenck6" style="display: block; margin: auto; width: 50%;">
+
+## 问题
+
+### 搜不到 5GHz 的 WIFI 
+
+我有一个有些古老的 MikroTik RouterOS 路由器，一加 12 搜不到它的 5G 频段 WIFI ，我也是第一次碰到这个问题，其他设备都可以正常搜到这个 5G 频段的 WIFI。
+
+但是一加 12 只能搜到 2.4G 频段。  
+
+其他路由器的 WIFI6 目前都可以正常使用，WIFI7 我还没有见过。   
+
+**解决方案**: 查看了一下 WIFI 的频道，默认是在 149(5745)，我调整为 36(5180) 后就可以搜到并加入了。 
+
+大概与下面的有关，毕竟我的 OxygenOS 刷的是欧版的 ROM 
+<img src="https://m.nep.me/blog/post/oneplus-12-wlan-channel.png" alt="WLAN Channel" style="display: block; margin: auto; width: 50%;">

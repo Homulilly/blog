@@ -44,6 +44,10 @@ Code Server 有设计安全访问限制，限制每分钟两次、每小时十�
 code-server --install-extension chadalen.vscode-jetbrains-icon-theme-2.18.0.vsix
 ```
 
+在服务器上使用，切换文件夹没有原版方便，推荐安装扩展 Project Manager：
+ - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
+ - [Open VSX Store](https://open-vsx.org/extension/alefragnani/project-manager)
+
 ### 设置
 #### 字体
 和普通版本一样，按打开设置(`Ctrl + ,`)，搜索字体，然后修改即可。 
