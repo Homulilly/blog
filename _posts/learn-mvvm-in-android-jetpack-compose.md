@@ -1,5 +1,5 @@
 ---
-title: 学习笔记： Android Jetpack Compose 中的 MVVM 
+title: 学习笔记：Android Jetpack Compose 中的 MVVM 
 date: 2024-10-06 09:36:56
 tags:
  - Android

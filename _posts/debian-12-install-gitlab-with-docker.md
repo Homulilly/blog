@@ -169,11 +169,11 @@ docker-compose up -d
 # 关闭服务
 docker-compose down
 
-# 查看是否出错
-docker-compose up
-
 # 后台启动
 docker-compose up -d
+
+# 查看日志
+docker-compose logs -f
 ```
 
 GitLab 启动提示

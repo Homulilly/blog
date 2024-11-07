@@ -4,6 +4,11 @@
 #   avatar: 
 #   rss:
 
+- name: Phoenix's island
+  info: 凤凰卷
+  site: https://blog.phoenixlzx.com
+  avatar: https://blog.phoenixlzx.com/static/img/avatar/avatar.jpg
+
 - name: Perfect Freeze!
   info: CEE
   site: https://blog.cee.moe
@@ -39,7 +44,7 @@
   site: https://blog.sinzmise.top/
   avatar: https://blog.sinzmise.top/images/icon.png
 
-- name: 梦想之都
-  info: 朝着梦想前进
-  site: https://hexo.dreamerhe.cn/
-  avatar: https://jsd.dreamerhe.cn/gh/dreamerhe114514/baimgapi@main/image/tx.png
+# - name: 梦想之都
+#   info: 朝着梦想前进
+#   site: https://dreamerhe.cn/
+#   avatar: https://jsd.dreamerhe.cn/gh/dreamerhe114514/baimgapi@main/image/tx.png

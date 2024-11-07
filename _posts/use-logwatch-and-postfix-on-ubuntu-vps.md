@@ -98,7 +98,7 @@ Output = mail
   #or myorigin=/etc/mailname
   ```
 - 设置使用 SMTP 通过 SparkPost 发送邮件  
-  via [SparkPost Support: Using SparkPost with Postfix](https://support.sparkpost.com/customer/portal/articles/2030960-using-sparkpost-with-postfix)  
+  via [SparkPost](https://developers.sparkpost.com/)  
   去 SparkPost 创建一个有 SMTP 发送权限的 api key ，然后将下面内容加入 配置文件之中
   ```
   smtp_sasl_auth_enable = yes

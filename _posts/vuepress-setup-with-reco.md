@@ -9,7 +9,7 @@ categories:
 
 - [VuePress V2 设置指南](https://v2.vuepress.vuejs.org/zh/reference/config.html)
 - [VuePress Theme Reco - Github](https://github.com/vuepress-reco/vuepress-theme-reco)
-- [VuePress Theme Reco - 指南](https://vuepress-theme-reco.recoluan.com/docs/guide/getting-started.html)
+- [VuePress Theme Reco - 指南](https://theme-reco.vuejs.press/docs/guide/introduce.html)
 - 界面、样式美观 
 - 页面自动生成 `[TOC]`  
 - 本文不使用主题自带的博客系统    
@@ -145,7 +145,7 @@ export default defineUserConfig({
 
 ### 设置侧栏
 
-主题可以自动设置左侧侧栏： [自动设置系列(Series)](http://v2.vuepress-reco.recoluan.com/docs/theme/auto-set-series.html)  
+主题可以自动设置左侧侧栏：  
 但是我设置后一开始并未生效，研究一下发现，需要在与 `.vuepress` 同目录建立一个 `docs` 文件夹，其下的文档可以自动生成，而且父文件夹也不能是 `docs`。  
 >然后在主题的配置文件中设置 `autoSetSeries: true` 即可   
 

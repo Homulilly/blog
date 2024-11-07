@@ -146,8 +146,6 @@ docker run -d --restart always --name 容器名称 镜像
 docker update --restart=always 容器 ID / 容器名称
 ```
 
-参考: [搭建自己的密码管理服务器 Bitwarden](https://cloud.tencent.com/developer/article/1578102)
-
 ## 使用 `docker compose`
 每次更新都需要删除再重建，确实不便，尤其是使用了多个 docker 服务的时候，可以使用 `docker compose` 管理。
 现在 `docker compose` 已内置进 docker cli 命令中，无需手动安装 

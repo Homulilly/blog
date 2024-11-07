@@ -229,6 +229,5 @@ iptables -t nat -D POSTROUTING -j MASQUERADE
 
 ### 参考链接：
  - [Getting started with nginx rtmp](https://github.com/arut/nginx-rtmp-module)
- - [不用采集卡搭建PS4直播环境-CentOS-7网络设置](https://odinliu.com/2015/01/28/%E4%B8%8D%E7%94%A8%E9%87%87%E9%9B%86%E5%8D%A1%E6%90%AD%E5%BB%BAPS4%E7%9B%B4%E6%92%AD%E7%8E%AF%E5%A2%83-CentOS-7%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/)
  - [如何用最低的成本转播PlayStation 4到国内的直播平台](http://colinzhang.com/2015/10/how-to-push-play-station-4-live-stream-with-lower-cost/)
  - [https://docs.peer5.com/guides/setting-up-hls-live-streaming-server-using-nginx/](https://docs.peer5.com/guides/setting-up-hls-live-streaming-server-using-nginx/)

@@ -39,7 +39,7 @@ type: links
 <br />
 
 > **本站信息** 
-名称： Homulilly
-介绍： Aroes's Blog | \萌脇舞以/
+名称： **Homulilly**
+介绍： Aroes\'s Blog | \萌脇舞以/
 网址： https://homulilly.com
 头像： https://homulilly.com/images/avatar.jpg

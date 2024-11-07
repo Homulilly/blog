@@ -5,6 +5,8 @@ tags:
   - hexo
 ---
 
+本文档已年久失修，请查看 [更新 Hexo 和 NexT 主题，使用 Twikoo 评论系统](https://homulilly.com/post/hexo-update-with-twikoo.html)
+
 之前换到这里的时候，用的是 Typecho ，然后用的主题是从 Hexo 移植过来的，然后就知道了 Hexo ，感觉也是很不错。虽然因为主题数量不多，很多的大家都长得差不多。  
 
 然后，觉得Typecho更新比较慢，感觉和没人维护一样，但是去github看看还是在不断更新的，然后就考虑考虑到下次的话换到 Hexo 看看，觉得迁移起来应该比较方便的样子 （怎么老是在迁移 - -），但是懒，然而还在考虑的时候呢，VPS 挂了，启动不了，发了技术支持，人家说可能我的硬盘有问题了，然后需要我新创键一个机器供他们测试用 （Excuse me?）。然后我新建一个后，直接恢复备份了，旧机器挂掉的原因也就不了了之了（我恢复完数据后，告诉他们说检测完后告诉我一下原因然后我把旧的删掉，结果直接告诉我可以现在就删掉了）  
@@ -14,7 +16,7 @@ tags:
 Hexo 安装起来很是方便，本地安装 Node.JS 环境即可。部署可以通过 git 的方式。  
 
 安装 Hexo ：[Hexo 官方文档 - 中文](https://hexo.io/zh-cn/docs/index.html)  
-配置 git ： [使用 Git Hook 自动部署 Hexo 到个人 VPS](http://www.swiftyper.com/2016/04/17/deploy-hexo-with-git-hook/)    
+配置 Git
 Next 主题文档 ：[NexT 使用文档](http://theme-next.iissnan.com/)
 
 看起来还是很不错的 :)  

@@ -24,6 +24,10 @@ curl -fOL https://github.com/coder/code-server/releases/download/v$VERSION/code-
 sudo dpkg -i code-server_${VERSION}_amd64.deb
 
 sudo systemctl enable --now code-server@$USER
+
+// 关闭与启动
+systemctl start code-server@$USER
+systemctl stop code-server@$USER
 ```
 
 运行后会在 `~/.config/code-server/config.yaml` 生成配置文件，初次生成包含默认的 `127.0.0.1:8080` 与访问密码，如果是本地使用，直接访问 `http://127.0.0.1:8080` 即可。  
@@ -61,7 +65,7 @@ code-server --install-extension chadalen.vscode-jetbrains-icon-theme-2.18.0.vsix
 
 终端右上角的菜单可以选择默认终端配置。  
 
-![code-server](https://m.nep.me/minio/d/blog/post/code-server.png)
+![code-server](https://m.nep.me/blog/post/code-server.png)
 
 ### 在 Android 上使用 
 直接在 Chrome 中使用有地址栏看起来很是不爽，不过只要点击 Chrome 菜单，选择 `添加到屏幕` 就可以全屏使用了。  
