@@ -14,7 +14,7 @@ categories:
 - 页面自动生成 `[TOC]`  
 - 本文不使用主题自带的博客系统    
 
-[本文在 VuePress 上的预览](https://nepnep.me/vuepress.html)
+[本文在 VuePress 上的预览](https://note.nep.me/vuepress.html)
 
 <!--more-->
 

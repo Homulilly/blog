@@ -20,11 +20,13 @@ categories:
 然后备份存档，刷了三个结局，二周目初见鸟姐，手刃，拿徽章买武器 - You got a Platinum Trophy 。
 
 <s> 然后不知道为什金杯刷的停不下来了，以及随后去看了黑桐谷歌的攻略视频后，果然不是一个游戏系列</s>  
-<blockquote class="blockquote-center"> 猎人永不孤单 </blockquote>
+<blockquote class="blockquote-center"> 猎人永不孤单 </blockquote> 
+
 ![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-01.jpg)  
 ![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-02.jpg)  
 ![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-03.jpg)  
-![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-04.jpg)  
+![Lady Maria](https://m.nep.me/blog/post/p07-bloodborne-doll-04.jpg) 
+ 
 <blockquote class="blockquote-center"> 以血祝福我们 </blockquote>  
 
 ---

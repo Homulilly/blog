@@ -10,7 +10,7 @@ VuePress + VuePress Theme Reco 是很好看，但是已经两次遇到更新升�
 
 果然还是大道至简。  
 
-预览 [NEP NOTE](https://nepnep.me)
+预览 [NEP NOTE](https://note.nep.me)
 
 <!--more-->
 ## 安装
