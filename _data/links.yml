@@ -49,7 +49,12 @@
 #   site: https://dreamerhe.cn/
 #   avatar: https://jsd.dreamerhe.cn/gh/dreamerhe114514/baimgapi@main/image/tx.png
 
-- name: Moe AiTools
-  info: Discover AI Tools & Products
-  site: https://aitools.moe
-  avatar: https://aitools.moe/logo.png
+- name: Elykia
+  info: 致以无暇之人
+  site:  https://blog.elykia.cn
+  avatar: https://bu.dusays.com/2024/10/25/671b2438203a6.gif
+
+- name: 茂茂物语
+  info: 茂茂的成长之路，包含前端常用知识、源码阅读笔记、各种奇淫技巧、日常提效工具等
+  site:  https://notes.fe-mm.com
+  avatar: https://notes.fe-mm.com/logo.png

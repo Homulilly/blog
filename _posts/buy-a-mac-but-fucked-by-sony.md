@@ -6,6 +6,8 @@ tags:
  - Apple
  - SONY
  - INZONE M10S
+categories:
+ - Just-buy
 ---
 
 这苹果的 M4 看着是风生水起，搞的我有一点心动，正好手上的笔记本 ASUS Zenbook Duo 感觉越来越不行了，两块屏幕的色差感觉比刚买的时候强烈多了。  
@@ -50,11 +52,16 @@ tags:
 
 不过可以安装第三方软件 [Better Display](https://github.com/waydabber/BetterDisplay) 强制开启其他档位的 HiDPI 选项，我开了 2048x1152 ，看着还可以接受。  
 
-主要我没用过 4K 的版本，没有太大落差，毕竟 27 寸 2K PPI 就摆在那里，只有 108 ，27 寸 4K 则有 163。 
+主要我没用过 4K 的版本，没有太大落差，毕竟 27 寸 2K PPI 就摆在那里，只有 108 ，27 寸 4K 则有 163，32 4K 是 138。 
 
 不过 PPI 不够，可以距离来凑，我发现在大约 75cm 视距时效果很不错，还能保持良好坐姿。  
 
-听说这个软件开启 HiDPI 是免费功能，刚安装有提供 14 天的试用，待结束后再来更新。
+我最后还是换了个 32 寸 4K ，毕竟高刷对我来说 120Hz 就足够了 ， 毕竟 **大就是好** ，而且有系统原生支持的 4K 缩放优化显示效果就是好了不少。
+
+关于刷新率，480 和 120 基本也就是能从晃动鼠标的轨迹看出来。
+
+至于 M10S 吧，显示效果还是很好的，尤其是作为 OLED 侧面看显示效果完全没有衰减，非常惊艳（但是好像没有太大用处），如果是 4K 就好了。  
+而且 OLED 不会漏光，显示的黑色时 IPS 没法比的。
 
 ### 鼠标滚轮
 
@@ -90,7 +97,7 @@ Control、Option、Command 与 Ctrl、Alt、Windows 对应，但是位置不同�
 
 我发现如果待机久了，回来就会无法检测外接屏幕。
 
-手动切换一下显示器的输入即可。  
+手动切换一下输入，或是在显示器中将自动切换输入改为固定的 HDMI 1。  
 
 ### INZOME M10S 自动降低亮度
 
@@ -105,6 +112,39 @@ Control、Option、Command 与 Ctrl、Alt、Windows 对应，但是位置不同�
 
 不是很喜欢深色模式，发现 OSD 菜单中有亮度稳定的选项，开启后，限制了最高亮度，但是不会出现变化导致影响观感。  
 
----
 
-慢慢更新。  
+### 安装 Stable Diffusion
+
+#### 推荐 MochiDiffusion
+
+[MochiDiffusion](https://github.com/MochiDiffusion/MochiDiffusion/releases)
+
+在 Releases 中下载 dmg 直接安装即可。 
+
+不过需要自行转换或下载 Core ML 模型，[下载](https://huggingface.co/coreml-community) 已转换的模型。
+
+下载后，放入用户 Home 目录下 `MochiDiffusion/models` 文件夹中。··
+
+#### 或是安装原版 Stable Diffusion WebUI
+先安装 [Homebrew](https://brew.sh/)
+
+安装必要依赖
+```sh
+brew install cmake protobuf rust python@3.10 git wget
+```
+
+Clone **Stable Diffusion WebUI**
+```sh
+cd ~
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
+```
+
+运行
+```sh
+cd stable-diffusion-webui
+
+./webui.sh
+```
+
+Stable Diffusion WebUI 会自动使用 python3.10
+---
