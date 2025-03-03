@@ -41,8 +41,8 @@
 
 - name: 汐塔魔法屋
   info: 种下一颗有故事的种子，让它带着魔法和奇迹生根发芽
-  site: https://blog.sinzmise.top/
-  avatar: https://blog.sinzmise.top/images/icon.png
+  site: https://blog.storical.space/
+  avatar: https://blog.storical.space/images/icon.png
 
 # - name: 梦想之都
 #   info: 朝着梦想前进
@@ -58,3 +58,13 @@
   info: 茂茂的成长之路，包含前端常用知识、源码阅读笔记、各种奇淫技巧、日常提效工具等
   site:  https://notes.fe-mm.com
   avatar: https://notes.fe-mm.com/logo.png
+
+- name: Leet
+  info: Out of my mind.
+  site:  https://leetme.netlify.app
+  avatar: https://leetme.netlify.app/logo.svg
+
+- name: 王鑫小站
+  info: 活着就是为了折腾!
+  site: https://wxweb.xyz
+  avatar: https://pic.wxweb.xyz/pic/main.jpg

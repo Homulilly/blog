@@ -15,6 +15,9 @@ categoriez:
 ```
 用户 <---> Cloudflare <--> Cloudflare Tunnel <--> 源服务器(可以位于内网)
 ```
+
+> 使用感受：适合代理 web 服务，客户端无需安装程序，如果代理 tcp 服务比如 ssh 需要在客户机安装 cloudflared ，无法直接转发。 
+> 如果有在公网的 VPS ，推荐使用 [frp](https://github.com/fatedier/frp)
 <!--more-->
 
 ## 准备
@@ -105,3 +108,10 @@ sudo cloudflared service install AAABBBCCC....
 完成设置后，当访问相关应用后，会先经过 Cloudflare 的身份验证。
 
 不过这样有些略显麻烦，相较于直接将服务暴露在公网中，还是习惯转发一个代理回到内网使用相应的服务。  
+
+## 卸载 cloudflared 服务
+
+```sh
+cloudflared service uninstall
+dpkg --remove cloudflared
+```

@@ -67,5 +67,7 @@ Password: changeme
 一设置 `Custom locations` ，站点就 offline 了，访问报错 `ERR_SSL_UNRECOGNIZED_NAME_ALERT`，搜了一下别人也有相同的问题  
 [Github issues](https://github.com/NginxProxyManager/nginx-proxy-manager/issues/3536)
 
-2024.03.02 说是补丁在路上了
+~~2024.03.02 说是补丁在路上了~~
+
+在 2.11.2 版本已修复
 

@@ -72,11 +72,6 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on"
 ```
 
-一键修改命令
-```sh
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=pt initcall_blacklist=sysfb_init"/g' /etc/default/grub
-```
-
 然后更新 grub 
 ```sh
 update-grub
@@ -275,7 +270,7 @@ int main(int argc, char** argv)
  - Network Model 选择 VirtIO
  - CPU 启用 NUMA，类别选择 `host`
 
-系统安装流程中需要使用 Windows 用的 [KVM 驱动](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/)，下载 ISO 镜像文件挂载为虚拟光驱。
+系统安装流程中需要使用 Windows 用的 [KVM 驱动](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/)，下载 virtio-win.iso 镜像文件挂载为虚拟光驱。
 
 然后进行系统的安装，安装完成后在 Windows 虚拟机内启用远程桌面并关机。
 

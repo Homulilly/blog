@@ -122,5 +122,10 @@ git config --global --add safe.directory /storage/emulated/0/Documents/obsidian
 ```
 运行了提示的命令就解决了  
 
+### Termux 不显示 extra keys
+许久没有用到 extra keys，拿掉物理键盘后才发现没有了，改了半天配置才发现是我忘记自己隐藏掉了
+ - 音量UP + Q 可以显示 / 隐藏
+ - 从左上角滑动，可以打开菜单，长按 Keyboard 也可以
+
 ### 参考
 [Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)

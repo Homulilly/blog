@@ -180,6 +180,32 @@ docker pull imaegoo/twikoo
 docker run --name twikoo -p 127.0.0.1:8080:8080 -v [path]/data:/app/data -d imaegoo/twikoo
 ```
 
+### 使用 docker compose 
+相比 `docker run` 命令，使用 docker compose 更为简单，首先在创建一个文件夹，再创建 `docker-compose.yml` 文件。 
+```yml
+services:
+  twikoo:
+    image: imaegoo/twikoo:latest
+    container_name: twikoo
+    ports:
+      - 127.0.0.1:8080:8080
+    volumes:
+      - /var/www/twikoo/data:/app/data
+    restart: always
+```
+
+```sh
+# 拉取、更新镜像
+docker compose pull
+# 启动后台
+docker compose up -d
+
+# 常用命令
+docker compose stop     # 暂停容器
+docker compose down     # 删除容器
+docker compose restart  # 重启容器
+```
+
 ### 设置 Nginx 反代
 ```bash
 server{
@@ -199,7 +225,7 @@ server{
   }
 }    
 ```
-### 设置自启动  
+### docker run 模式设置自启动  
 ```sh
 docker update --restart=always  twikoo 
 ```
@@ -210,6 +236,9 @@ docker update --restart=always  twikoo
 ```json
 {"code":100,"message":"Twikoo 云函数运行正常，...","version":"1.x.x"}
 ```
+
+### 设置面板
+第一次打开 Twikoo 面板，需要设置 **密码** ，然后进入面板可以导入平路、设置站点信息、邮件发送、消息推送等功能。
 
 Ref: [Twikoo小白私有化部署教程,迁移腾讯云](https://xiaoniuhululu.com/2022-08-09_twikoo_privatization_deployment_tutorial/)
 
