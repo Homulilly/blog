@@ -32,12 +32,12 @@
 - name: 烧饼博客
   info: 服务器运维、专业域名投资分析
   site: https://u.sb
-  avatar: https://s3.rsb.net/apple-touch-icon.png
+  avatar: https://avatars.githubusercontent.com/u/100487313?s=200&v=4
 
-- name: I Teach You, 我教你！
-  info: 专注于IT技术分享、免费教程、学习资源的博客。
-  site: https://www.iteachyou.cc/
-  avatar: https://www.iteachyou.cc/templates/iteachyou/images/logo_215_215.jpg
+# - name: I Teach You, 我教你！
+#   info: 专注于IT技术分享、免费教程、学习资源的博客。
+#   site: https://www.iteachyou.cc/
+#   avatar: https://www.iteachyou.cc/templates/iteachyou/images/logo_215_215.jpg
 
 - name: 汐塔魔法屋
   info: 种下一颗有故事的种子，让它带着魔法和奇迹生根发芽
@@ -64,10 +64,10 @@
   site:  https://leetme.netlify.app
   avatar: https://leetme.netlify.app/logo.svg
 
-- name: 王鑫小站
-  info: 活着就是为了折腾!
-  site: https://wxweb.xyz
-  avatar: https://pic.wxweb.xyz/pic/main.jpg
+# - name: 王鑫小站
+#   info: 活着就是为了折腾!
+#   site: https://wxweb.xyz
+#   avatar: https://pic.wxweb.xyz/pic/main.jpg
 
 - name: iFluxArt
   info: 斐启智境 · 流韵新生
