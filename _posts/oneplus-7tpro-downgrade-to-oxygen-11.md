@@ -8,8 +8,6 @@ categories:
  - Note
 ---
 
-![OnePlus 7T Pro downgrade from ColorOS 12 to OxygenOS 11](https://m.nep.me/blog/post/oneplus-7tpro-hero.png)
-
 用来当作收短信的备用机一加 7T Pro 明明之前去换了块电池，但是现在熄屏待机还是不到两天就关机了，实在是太短了，不能到一周，起码也得四五天吧。  
 
 不知道是不是系统用了四五年的问题，还升级到了 ColorOS 12 ，也可能是备件电池本身就是放了太久了，有损耗。  
@@ -22,11 +20,12 @@ categories:
 
 感谢大侠阿木。  
 
-- [OPLocalUpdate_For_Android12.apk](https://yun.daxiaamu.com/files/%E5%B8%B8%E7%94%A8APP/%E6%9C%AC%E5%9C%B0%E5%8D%87%E7%BA%A7/OPLocalUpdate_For_Android12.apk?preview)
+- [OPLocalUpdate_For_Android12.apk](https://yun.daxiaamu.com/OnePlus_Roms/%E4%B8%80%E5%8A%A07T%20Pro/)
     刷机 APP ，安装后叫做 **系统升级**
-- [一加7T Pro 降级包 氧OS 11.0.5.1](https://yun.daxiaamu.com/OnePlus_Roms_2/%E4%B8%80%E5%8A%A07T%20Pro/%E9%99%8D%E7%BA%A7%E5%8C%85%20%E6%B0%A7OS%2011.0.5.1/)
+- [一加7T Pro 降级包 氧OS 11.0.5.1](https://yun.daxiaamu.com/OnePlus_Roms/%E4%B8%80%E5%8A%A07T%20Pro/)
     用于从氧OS 12 降级到氧OS 11，我下载的是 **全球版&&印度版**
 
+链接已更新，可以从百度网盘下载。
 <!--more-->
 
 ### 降级过程
