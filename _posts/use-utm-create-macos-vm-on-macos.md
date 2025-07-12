@@ -14,13 +14,13 @@ categories: Note
 
 搜索了一下发现 [Parallels](https://kb.parallels.com/cn/125561) 和免费的 UTM 是支持。
 
-下载使用 UTM 安装了，非常的简单，运行也比较流畅。  
+最终使用 UTM 安装了，非常的简单，运行也比较流畅。  
 
 <!--more-->
 
 ## 下载 ipsw 格式的 macOS 镜像
 
-访问 https://ipsw.me/product/Mac 通过选择设备获取镜像下载链接，下载上通过 Apple 的服务器下载的。  
+访问 https://ipsw.me/product/Mac 通过选择设备获取镜像下载链接，下载是通过 Apple 的服务器下载的。  
 
 推荐下载与宿主机相同版本的 macOS 镜像，我下载的是 15.1.1 。
 

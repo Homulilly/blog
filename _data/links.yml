@@ -64,10 +64,10 @@
   site:  https://leetme.netlify.app
   avatar: https://leetme.netlify.app/logo.svg
 
-# - name: 王鑫小站
-#   info: 活着就是为了折腾!
-#   site: https://wxweb.xyz
-#   avatar: https://pic.wxweb.xyz/pic/main.jpg
+- name: 王鑫小站
+  info: 活着就是为了折腾!
+  site: https://wxweb.xyz
+  avatar: https://pic.wxweb.xyz/pic/main.jpg
 
 - name: iFluxArt
   info: 斐启智境 · 流韵新生

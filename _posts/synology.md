@@ -44,7 +44,7 @@ qm importdisk $vmid /var/lib/vz/template/iso/arpl.img local
     使用这种方法在群晖里显示的是 `QEMU DISK`，无法查看 S.M.A.R.T. 信息，不过 7.2 系统看着已经不显示 S.M.A.R.T. 的详细信息了。
 
 2. 直通 PCI SATA 控制器  
-    查看 S.M.A.R.T. 信息可以直通 PCI 设备，需要 PVE 的自身系统不能安装在该 PCI 下面。  
+    如果需要查看 S.M.A.R.T. 信息，可以直通 PCI 设备，需要 PVE 的自身系统不能安装在该 PCI 下面。  
     方法更简单，直接在 PVE 网页管理界面就可以操作。
  
     首先通过 `lspci` 查看信息，记录要直通的 SATA 控制器的编号。    

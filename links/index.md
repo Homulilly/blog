@@ -43,3 +43,5 @@ type: links
 介绍： Aroes\'s Blog 
 网址： https://homulilly.com
 头像： https://homulilly.com/images/avatar.jpg
+
+> 网站失效一段时间后可能会被移除，如果回来了请提醒
